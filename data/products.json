@@ -1,0 +1,127 @@
+{
+  "lastUpdated": "2026-02-07T12:00:00+09:00",
+  "totalProducts": 12,
+  "sourceUrl": "https://shop.coupang.com/apple/76487",
+  "products": [
+    {
+      "name": "Apple 아이폰 16 Pro Max 자급제, 256GB, 사막 티타늄",
+      "price": 1750000,
+      "originalPrice": 1900000,
+      "url": "https://www.coupang.com/vp/products/apple-iphone16promax",
+      "image": "",
+      "category": "iPhone",
+      "discountPercent": 7.9,
+      "savings": 150000
+    },
+    {
+      "name": "Apple 아이폰 16 Pro 자급제, 256GB, 블랙 티타늄",
+      "price": 1480000,
+      "originalPrice": 1550000,
+      "url": "https://www.coupang.com/vp/products/apple-iphone16pro",
+      "image": "",
+      "category": "iPhone",
+      "discountPercent": 4.5,
+      "savings": 70000
+    },
+    {
+      "name": "Apple 아이폰 16 자급제, 256GB, 울트라마린",
+      "price": 1150000,
+      "originalPrice": 1250000,
+      "url": "https://www.coupang.com/vp/products/apple-iphone16",
+      "image": "",
+      "category": "iPhone",
+      "discountPercent": 8.0,
+      "savings": 100000
+    },
+    {
+      "name": "Apple 2024 맥북 프로 14 M4 Pro, 24GB, 512GB, 스페이스 블랙",
+      "price": 2690000,
+      "originalPrice": 2990000,
+      "url": "https://www.coupang.com/vp/products/apple-macbookpro14-m4pro",
+      "image": "",
+      "category": "MacBook",
+      "discountPercent": 10.0,
+      "savings": 300000
+    },
+    {
+      "name": "Apple 2024 맥북 에어 15 M3, 16GB, 256GB, 미드나이트",
+      "price": 1690000,
+      "originalPrice": 1890000,
+      "url": "https://www.coupang.com/vp/products/apple-macbookair15-m3",
+      "image": "",
+      "category": "MacBook",
+      "discountPercent": 10.6,
+      "savings": 200000
+    },
+    {
+      "name": "Apple 2024 아이패드 프로 13 M4, 256GB, Wi-Fi, 스페이스 블랙",
+      "price": 2250000,
+      "originalPrice": 2499000,
+      "url": "https://www.coupang.com/vp/products/apple-ipadpro13-m4",
+      "image": "",
+      "category": "iPad",
+      "discountPercent": 10.0,
+      "savings": 249000
+    },
+    {
+      "name": "Apple 2024 아이패드 에어 13 M2, 128GB, Wi-Fi, 스타라이트",
+      "price": 1150000,
+      "originalPrice": 1299000,
+      "url": "https://www.coupang.com/vp/products/apple-ipadair13-m2",
+      "image": "",
+      "category": "iPad",
+      "discountPercent": 11.5,
+      "savings": 149000
+    },
+    {
+      "name": "Apple 에어팟 프로 2세대 USB-C (MagSafe)",
+      "price": 295000,
+      "originalPrice": 349000,
+      "url": "https://www.coupang.com/vp/products/apple-airpods-pro2",
+      "image": "",
+      "category": "AirPods",
+      "discountPercent": 15.5,
+      "savings": 54000
+    },
+    {
+      "name": "Apple 에어팟 4세대 액티브 노이즈 캔슬링",
+      "price": 225000,
+      "originalPrice": 259000,
+      "url": "https://www.coupang.com/vp/products/apple-airpods4-anc",
+      "image": "",
+      "category": "AirPods",
+      "discountPercent": 13.1,
+      "savings": 34000
+    },
+    {
+      "name": "Apple Watch Series 10 GPS 46mm 알루미늄, 제트 블랙",
+      "price": 540000,
+      "originalPrice": 629000,
+      "url": "https://www.coupang.com/vp/products/apple-watch-s10",
+      "image": "",
+      "category": "Apple Watch",
+      "discountPercent": 14.1,
+      "savings": 89000
+    },
+    {
+      "name": "Apple Watch Ultra 2 GPS + Cellular 49mm 티타늄",
+      "price": 1050000,
+      "originalPrice": 1149000,
+      "url": "https://www.coupang.com/vp/products/apple-watch-ultra2",
+      "image": "",
+      "category": "Apple Watch",
+      "discountPercent": 8.6,
+      "savings": 99000
+    },
+    {
+      "name": "Apple 2024 Mac mini M4 Pro, 24GB, 512GB",
+      "price": 2050000,
+      "originalPrice": 2190000,
+      "url": "https://www.coupang.com/vp/products/apple-macmini-m4pro",
+      "image": "",
+      "category": "Mac mini",
+      "discountPercent": 6.4,
+      "savings": 140000
+    }
+  ]
+}
