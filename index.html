@@ -26,6 +26,19 @@
       --radius: 16px;
     }
 
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f1f5f9;
+      --text-sub: #94a3b8;
+      --accent: #3b82f6;
+      --accent-light: #1e3a8a;
+      --border: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,6 +46,19 @@
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
+    }
+
+    /* Reading Progress Bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899);
+      z-index: 1001;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.1s ease;
     }
 
     /* Navigation */
@@ -46,6 +72,10 @@
       border-bottom: 1px solid var(--border);
       z-index: 1000;
       padding: 0.875rem 0;
+    }
+
+    [data-theme="dark"] nav {
+      background: rgba(15,23,42,0.9);
     }
 
     .nav-inner {
@@ -81,6 +111,108 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
+
+    /* Theme Toggle & Mobile Menu */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1.125rem;
+    }
+
+    .theme-toggle:hover {
+      background: var(--bg);
+      transform: scale(1.05);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mobile-menu-toggle span {
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(7px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: flex; }
+
+      .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+      }
+
+      .nav-links a:hover {
+        background: var(--bg);
+      }
+    }
 
     /* Sections */
     section {
@@ -621,6 +753,39 @@
       font-weight: 600;
     }
 
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-md);
+      z-index: 999;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .scroll-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -645,12 +810,13 @@
       .hero h1 { font-size: 1.875rem; }
       .stats-bar { grid-template-columns: 1fr 1fr; }
       .stat-num { font-size: 1.5rem; }
-      .nav-links { display: none; }
       .highlights-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+
+  <div class="progress-bar"></div>
 
   <nav>
     <div class="nav-inner">
@@ -663,6 +829,16 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀️</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -1096,11 +1272,71 @@
     </div>
   </section>
 
+  <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
   <footer>
     &copy; 2026 손민현. All rights reserved.
   </footer>
 
   <script>
+    // Dark Mode Toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = document.querySelector('.theme-icon');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Reading Progress Bar
+    const progressBar = document.querySelector('.progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      progressBar.style.transform = `scaleX(${scrollPercent})`;
+    });
+
+    // Scroll to Top Button
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -1112,16 +1348,50 @@
       });
     });
 
+    // Counter Animation
+    function animateCounter(element, target, duration = 2000) {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = element.dataset.originalText;
+          clearInterval(timer);
+        } else {
+          const numericPart = element.dataset.originalText.match(/[\d,]+/)[0];
+          const suffix = element.dataset.originalText.replace(numericPart, '');
+          const currentValue = Math.floor(current);
+          element.textContent = currentValue.toLocaleString() + suffix;
+        }
+      }, 16);
+    }
+
+    // Scroll Animation with Counter
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
+
+          // Animate counters for stats and highlights
+          if (entry.target.classList.contains('stat-item') || entry.target.classList.contains('highlight-card')) {
+            const metric = entry.target.querySelector('.stat-num, .highlight-metric');
+            if (metric && !metric.dataset.animated) {
+              metric.dataset.animated = 'true';
+              metric.dataset.originalText = metric.textContent;
+              const numericValue = parseInt(metric.textContent.replace(/\D/g, ''));
+              if (numericValue) {
+                animateCounter(metric, numericValue, 1500);
+              }
+            }
+          }
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item').forEach(el => {
+    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item, .competency-item, .service-card, .edu-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
