@@ -1,0 +1,36 @@
+name: Auto Create/Update PR
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create or Update PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+
+          # PR이 이미 존재하는지 확인
+          PR_NUMBER=$(gh pr list --head "$BRANCH_NAME" --base master --json number --jq '.[0].number')
+
+          if [ -z "$PR_NUMBER" ]; then
+            # PR 생성
+            gh pr create \
+              --title "Update from $BRANCH_NAME" \
+              --body "Auto-generated PR from $BRANCH_NAME branch" \
+              --base master \
+              --head "$BRANCH_NAME"
+            echo "✅ PR created"
+          else
+            echo "✅ PR #$PR_NUMBER already exists and will be auto-updated"
+          fi
