@@ -1135,27 +1135,6 @@
       outline-offset: 4px;
     }
 
-    /* UX: Scroll animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Reduced motion for accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.25rem; }
@@ -1252,7 +1231,7 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="fade-in">
+  <section id="about">
     <div class="section-label">About</div>
     <h2 class="section-title">AI를 동료로, 지능형 시스템을 설계합니다</h2>
     <div class="about-grid">
@@ -1301,7 +1280,7 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="fade-in">
+  <section id="services">
     <div class="section-label">Side Project</div>
     <h2 class="section-title">운영 서비스</h2>
     <div class="service-card">
@@ -1329,7 +1308,7 @@
   </section>
 
   <!-- Key Highlights -->
-  <section id="highlights" class="fade-in">
+  <section id="highlights">
     <div class="section-label">Key Highlights</div>
     <h2 class="section-title">숫자로 증명하는 성과</h2>
     <div class="highlights-grid">
@@ -1367,7 +1346,7 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="fade-in">
+  <section id="experience">
     <div class="section-label">Experience</div>
     <h2 class="section-title">경력</h2>
     <div class="timeline">
@@ -1551,7 +1530,7 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="fade-in">
+  <section id="skills">
     <div class="section-label">Skills & Tools</div>
     <h2 class="section-title">핵심 역량</h2>
 
@@ -1654,7 +1633,7 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="fade-in">
+  <section id="education">
     <div class="section-label">Education</div>
     <h2 class="section-title">학력</h2>
     <div class="edu-card">
@@ -1668,7 +1647,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="fade-in">
+  <section id="contact">
     <div class="section-label">Contact</div>
     <h2 class="section-title">연락처</h2>
     <div class="contact-grid">
@@ -2004,19 +1983,6 @@
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
-    });
-
-    // Fade-in animation for sections
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      sectionObserver.observe(el);
     });
   </script>
 
