@@ -693,8 +693,6 @@
     }
 
     .skill-bar-item {
-      opacity: 0;
-      transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
@@ -1754,10 +1752,14 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item, .competency-item, .service-card, .edu-card, .skill-bar-item').forEach(el => {
+    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item, .competency-item, .service-card, .edu-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.skill-bar-item').forEach(el => {
       observer.observe(el);
     });
   </script>
