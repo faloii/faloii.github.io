@@ -369,6 +369,103 @@
       font-weight: 500;
     }
 
+    /* Service */
+    .service-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .service-screenshot {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      background: #f1f5f9;
+    }
+
+    .service-screenshot-placeholder {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+    }
+
+    .service-info {
+      padding: 2.5rem 2.5rem 2.5rem 0;
+    }
+
+    .service-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .service-info h3 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-info .service-sub {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 1rem;
+    }
+
+    .service-info p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .service-link:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .service-card { grid-template-columns: 1fr; }
+      .service-info { padding: 1.5rem; }
+    }
+
     /* Key Highlights */
     .highlights-grid {
       display: grid;
@@ -561,6 +658,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#services">서비스</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -653,6 +751,33 @@
             <p>사용자 유입, 리텐션, 전환율 개선 경험 다수</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="section-label">Side Project</div>
+    <h2 class="section-title">운영 서비스</h2>
+    <div class="service-card">
+      <img
+        src="images/sskk.png"
+        alt="sskk.co.kr 스크린샷"
+        class="service-screenshot"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+      >
+      <div class="service-screenshot-placeholder" style="display:none;">스크린샷 준비 중</div>
+      <div class="service-info">
+        <span class="service-badge">운영 중</span>
+        <h3>ㅅㅅㅋㅋ 쓰끄</h3>
+        <div class="service-sub">sskk.co.kr</div>
+        <p>24시간 후 자동으로 사라지는 익명 커뮤니티. 부담 없이 자유롭게 이야기를 나눌 수 있는 휘발성 소셜 플랫폼입니다.</p>
+        <div class="service-tags">
+          <span class="tag">익명 커뮤니티</span>
+          <span class="tag">24시간 휘발</span>
+          <span class="tag">소셜</span>
+        </div>
+        <a href="https://www.sskk.co.kr/" target="_blank" class="service-link">서비스 바로가기 →</a>
       </div>
     </div>
   </section>
