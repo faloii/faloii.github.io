@@ -535,6 +535,13 @@
       object-position: center;
       display: block;
       background: #f8fafc;
+      cursor: zoom-in;
+      transition: transform 0.4s ease, opacity 0.2s;
+    }
+
+    .service-screenshot:hover {
+      transform: scale(1.08);
+      opacity: 0.95;
     }
 
     [data-theme="dark"] .service-screenshot {
@@ -1074,15 +1081,6 @@
       border-radius: 8px;
       font-size: 0.9rem;
       backdrop-filter: blur(10px);
-    }
-
-    .service-screenshot {
-      cursor: zoom-in;
-      transition: opacity 0.2s;
-    }
-
-    .service-screenshot:hover {
-      opacity: 0.9;
     }
 
     /* Footer */
