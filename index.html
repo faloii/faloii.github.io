@@ -300,47 +300,6 @@
       font-size: 1.2rem;
       color: var(--text-sub);
       line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    .hero-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .link-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .link-primary:hover {
-      background: #1d4ed8;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
-    }
-
-    .link-outline {
-      border: 1.5px solid var(--border);
-      color: var(--text);
-      background: var(--surface);
-    }
-
-    .link-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
     }
 
     /* Stats Bar */
@@ -1076,10 +1035,6 @@
           기능(Feature)을 기획하는 시대를 넘어, 지능형 시스템(Intelligent System)을 설계합니다.
           바로고 97% 효율화, 원티드랩 AI 에이전트 구축 등 복잡한 시스템을 조율하여 성과를 만들어냅니다.
         </p>
-        <div class="hero-links">
-          <a href="mailto:faloiiii@gmail.com" class="link-primary">메일로 연락하기</a>
-          <a href="https://www.linkedin.com/in/faloii/" target="_blank" class="link-outline">LinkedIn</a>
-        </div>
       </div>
 
       <div class="stats-bar">
@@ -1564,8 +1519,10 @@
   </footer>
 
   <script>
-    // Typed.js - Hero Typing Effect
-    const typed = new Typed('#typed-output', {
+    // Wait for all deferred scripts to load
+    window.addEventListener('load', function() {
+      // Typed.js - Hero Typing Effect
+      const typed = new Typed('#typed-output', {
       strings: [
         'AI를 동료로 정의하는 사람',
         '지능형 시스템 설계자',
@@ -1762,6 +1719,7 @@
     document.querySelectorAll('.skill-bar-item').forEach(el => {
       observer.observe(el);
     });
+  });
   </script>
 
 </body>
