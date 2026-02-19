@@ -5,10 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>손민현 | Product Orchestrator</title>
   <meta name="description" content="14년+ 경력의 Product Orchestrator. 개발자, 디자이너, AI 에이전트를 지휘하여 비즈니스 성과를 만들어냅니다.">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.emailjs.com;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Performance: Preconnect to CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Defer scripts for performance -->
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/lib/typed.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1039,6 +1049,7 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.5);
       transform: scale(0.9);
       transition: transform 0.3s ease;
+      cursor: zoom-out;
     }
 
     .lightbox.active .lightbox-image {
@@ -1092,6 +1103,59 @@
       border-top: 1px solid var(--border);
     }
 
+    /* Accessibility: Skip to main content */
+    .skip-to-main {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0 0 8px 8px;
+      font-weight: 600;
+      text-decoration: none;
+      z-index: 10000;
+      transition: top 0.3s ease;
+    }
+
+    .skip-to-main:focus {
+      top: 0;
+    }
+
+    /* Accessibility: Focus styles */
+    a:focus, button:focus, input:focus, textarea:focus, select:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .nav-link:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    /* UX: Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Reduced motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.25rem; }
@@ -1112,6 +1176,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Accessibility: Skip to main content -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
   <div class="progress-bar"></div>
 
@@ -1138,6 +1205,8 @@
       </div>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- Hero -->
   <section class="hero" id="hero">
@@ -1183,7 +1252,7 @@
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="fade-in">
     <div class="section-label">About</div>
     <h2 class="section-title">AI를 동료로, 지능형 시스템을 설계합니다</h2>
     <div class="about-grid">
@@ -1232,7 +1301,7 @@
   </section>
 
   <!-- Services -->
-  <section id="services">
+  <section id="services" class="fade-in">
     <div class="section-label">Side Project</div>
     <h2 class="section-title">운영 서비스</h2>
     <div class="service-card">
@@ -1240,6 +1309,7 @@
         src="images/sskk.png"
         alt="sskk.co.kr 스크린샷"
         class="service-screenshot"
+        loading="lazy"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
       >
       <div class="service-screenshot-placeholder" style="display:none;">스크린샷 준비 중</div>
@@ -1259,7 +1329,7 @@
   </section>
 
   <!-- Key Highlights -->
-  <section id="highlights">
+  <section id="highlights" class="fade-in">
     <div class="section-label">Key Highlights</div>
     <h2 class="section-title">숫자로 증명하는 성과</h2>
     <div class="highlights-grid">
@@ -1297,7 +1367,7 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience">
+  <section id="experience" class="fade-in">
     <div class="section-label">Experience</div>
     <h2 class="section-title">경력</h2>
     <div class="timeline">
@@ -1481,7 +1551,7 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills">
+  <section id="skills" class="fade-in">
     <div class="section-label">Skills & Tools</div>
     <h2 class="section-title">핵심 역량</h2>
 
@@ -1584,7 +1654,7 @@
   </section>
 
   <!-- Education -->
-  <section id="education">
+  <section id="education" class="fade-in">
     <div class="section-label">Education</div>
     <h2 class="section-title">학력</h2>
     <div class="edu-card">
@@ -1598,7 +1668,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <div class="section-label">Contact</div>
     <h2 class="section-title">연락처</h2>
     <div class="contact-grid">
@@ -1668,6 +1738,8 @@
     <img class="lightbox-image" src="" alt="">
     <div class="lightbox-caption"></div>
   </div>
+
+  </main>
 
   <footer>
     &copy; 2026 손민현. All rights reserved.
@@ -1932,6 +2004,19 @@
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
+    });
+
+    // Fade-in animation for sections
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      sectionObserver.observe(el);
     });
   </script>
 
