@@ -3,51 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>포트폴리오 | Your Name</title>
+  <title>손민현 | Product Owner</title>
+  <meta name="description" content="14년+ 경력의 Product Owner. 사용자와 비즈니스 가치를 연결하는 제품을 만듭니다.">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8f9fa;
-      --text-primary: #1a1a1a;
-      --text-secondary: #6c757d;
-      --accent: #0066cc;
-      --accent-hover: #0052a3;
-      --border: #e9ecef;
-      --shadow: rgba(0, 0, 0, 0.1);
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1a1a2e;
+      --text-sub: #64748b;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --border: #e2e8f0;
+      --gradient-1: linear-gradient(135deg, #2563eb, #7c3aed);
+      --gradient-2: linear-gradient(135deg, #0ea5e9, #2563eb);
+      --gradient-3: linear-gradient(135deg, #8b5cf6, #ec4899);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+      --radius: 16px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
       line-height: 1.6;
-      color: var(--text-primary);
-      background: var(--bg-primary);
+      color: var(--text);
+      background: var(--bg);
     }
 
-    /* Header & Navigation */
-    header {
+    /* Navigation */
+    nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(250,250,250,0.9);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       z-index: 1000;
-      padding: 1rem 0;
+      padding: 0.875rem 0;
     }
 
-    nav {
-      max-width: 1200px;
+    .nav-inner {
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 2rem;
       display: flex;
@@ -55,542 +56,961 @@
       align-items: center;
     }
 
-    .logo {
-      font-size: 1.5rem;
+    .nav-logo {
+      font-size: 1.125rem;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--text);
       text-decoration: none;
     }
 
+    .nav-logo span { color: var(--accent); }
+
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.75rem;
       list-style: none;
     }
 
     .nav-links a {
-      color: var(--text-secondary);
+      color: var(--text-sub);
       text-decoration: none;
+      font-size: 0.9rem;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     /* Sections */
     section {
-      padding: 5rem 2rem;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 5rem 2rem;
     }
 
-    section:first-of-type {
-      margin-top: 70px;
-    }
-
-    h1 {
-      font-size: 3.5rem;
+    .section-label {
+      font-size: 0.8rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
     }
 
-    h2 {
-      font-size: 2.5rem;
+    .section-title {
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 3rem;
-      text-align: center;
+      color: var(--text);
     }
 
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      color: var(--text-secondary);
-      font-size: 1.125rem;
-      line-height: 1.8;
-    }
-
-    /* Hero Section */
-    #home {
-      min-height: calc(100vh - 70px);
+    /* Hero */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      padding-top: 60px;
     }
 
-    .hero-content h1 {
-      animation: fadeInUp 0.8s ease-out;
-    }
+    .hero-content { max-width: 700px; }
 
-    .hero-content p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      animation: fadeInUp 0.8s ease-out 0.4s both;
-    }
-
-    .btn {
-      padding: 0.875rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
+    .hero-badge {
       display: inline-block;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px var(--shadow);
-    }
-
-    .btn-secondary {
-      border: 2px solid var(--accent);
+      background: var(--accent-light);
       color: var(--accent);
-      background: transparent;
+      padding: 0.375rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
 
-    .btn-secondary:hover {
+    .hero h1 {
+      font-size: 3.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .highlight {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-sub);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .link-primary {
       background: var(--accent);
-      color: white;
-      transform: translateY(-2px);
+      color: #fff;
     }
 
-    /* About Section */
-    #about {
-      background: var(--bg-secondary);
+    .link-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
     }
 
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
+    .link-outline {
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
     }
 
-    /* Projects Section */
-    .projects-grid {
+    .link-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Stats Bar */
+    .stats-bar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-top: 0.25rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
-    .project-card {
-      background: var(--bg-primary);
+    .about-text {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+      line-height: 1.9;
+    }
+
+    .competency-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .competency-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
       border-radius: 12px;
-      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .competency-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .competency-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.125rem;
+    }
+
+    .competency-item p {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    /* Experience */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .timeline-item {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      transition: box-shadow 0.3s;
+    }
+
+    .timeline-item:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline-company {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .timeline-role {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .timeline-period {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      background: var(--bg);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .timeline-desc {
+      font-size: 0.925rem;
+      color: var(--text-sub);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .achievement {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .achievement::before {
+      content: '▸';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .achievement strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .timeline-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Key Highlights */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
       border: 1px solid var(--border);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px var(--shadow);
+    .highlight-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
     }
 
-    .project-image {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: white;
+    .highlight-metric {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
     }
 
-    .project-content {
-      padding: 1.5rem;
-    }
+    .highlight-card:nth-child(1) .highlight-metric { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .highlight-card:nth-child(2) .highlight-metric { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .highlight-card:nth-child(3) .highlight-metric { background: var(--gradient-3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .highlight-card:nth-child(4) .highlight-metric { background: linear-gradient(135deg, #10b981, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .highlight-card:nth-child(5) .highlight-metric { background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .highlight-card:nth-child(6) .highlight-metric { background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-    .project-content h3 {
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-    }
-
-    .project-content p {
+    .highlight-title {
       font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+    }
+
+    .highlight-desc {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      font-weight: 700;
       margin-bottom: 1rem;
     }
 
-    .project-tags {
+    .skill-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1rem;
     }
 
-    .tag {
-      background: var(--bg-secondary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
+    .skill-tag {
+      background: var(--bg);
+      padding: 0.375rem 0.875rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text);
+      border: 1px solid var(--border);
     }
 
-    .project-links {
+    /* Education */
+    .edu-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid var(--border);
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 1rem;
     }
 
-    .project-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
+    .edu-info h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    .edu-info p {
       font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-top: 0.25rem;
     }
 
-    .project-links a:hover {
-      text-decoration: underline;
+    .edu-period {
+      font-size: 0.85rem;
+      color: var(--text-sub);
     }
 
-    /* Skills Section */
-    #skills {
-      background: var(--bg-secondary);
-    }
-
-    .skills-grid {
+    /* Contact */
+    .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
     }
 
-    .skill-category h3 {
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .skill-item {
-      background: var(--bg-primary);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--text-primary);
-    }
-
-    /* Contact Section */
-    .contact-content {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-link {
+    .contact-card {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      color: var(--text-primary);
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
       text-decoration: none;
-      font-size: 1.125rem;
-      transition: color 0.3s;
+      color: var(--text);
+      transition: all 0.2s;
     }
 
-    .contact-link:hover {
-      color: var(--accent);
+    .contact-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+
+    .contact-card .label {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+    }
+
+    .contact-card .value {
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     /* Footer */
     footer {
-      background: var(--text-primary);
-      color: white;
       text-align: center;
       padding: 2rem;
-    }
-
-    footer p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .hero-content p {
-        font-size: 1.25rem;
-      }
-
-      .nav-links {
-        gap: 1rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
+      .hero h1 { font-size: 2.25rem; }
+      .hero-desc { font-size: 1.05rem; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .timeline-header { flex-direction: column; }
+      section { padding: 3.5rem 1.5rem; }
+      .nav-links { gap: 1rem; }
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .logo {
-        font-size: 1.25rem;
-      }
-
-      .nav-links {
-        font-size: 0.9rem;
-      }
+      .hero h1 { font-size: 1.875rem; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-num { font-size: 1.5rem; }
+      .nav-links { display: none; }
+      .highlights-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="#home" class="logo">YourName</a>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><span>MH</span> Son</a>
       <ul class="nav-links">
-        <li><a href="#about">소개</a></li>
-        <li><a href="#projects">프로젝트</a></li>
-        <li><a href="#skills">스킬</a></li>
-        <li><a href="#contact">연락처</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <!-- Hero Section -->
-  <section id="home">
-    <div class="hero-content">
-      <h1>안녕하세요, <br>개발자 홍길동입니다</h1>
-      <p>사용자 경험을 최우선으로 생각하는 웹 개발자</p>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-        <a href="#contact" class="btn btn-secondary">연락하기</a>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div>
+      <div class="hero-content">
+        <div class="hero-badge">Product Owner &middot; 14년+ 경력</div>
+        <h1>
+          사용자와 비즈니스를<br>
+          <span class="highlight">제품으로 연결</span>합니다
+        </h1>
+        <p class="hero-desc">
+          여행, 음악, 라이브 방송, 채용/HR, 물류, 가상자산, 검색 포털까지 &mdash;
+          다양한 도메인에서 제품의 출시부터 고도화, 라이프사이클 전 과정을 주도해온 Product Owner입니다.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:faloiiii@gmail.com" class="link-primary">연락하기</a>
+          <a href="https://faloii.notion.site/b3312bbd7a934a5c96f3fcc8d6fe7c36" target="_blank" class="link-outline">Notion Portfolio</a>
+          <a href="https://www.linkedin.com/in/faloii/" target="_blank" class="link-outline">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-num">14+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">9</div>
+          <div class="stat-label">Companies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">Domains</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
-    <h2>소개</h2>
-    <div class="about-content">
-      <p>
-        안녕하세요! 저는 사용자 중심의 웹 애플리케이션을 만드는 것을 좋아하는 개발자입니다.
-        새로운 기술을 배우는 것을 즐기며, 항상 더 나은 코드를 작성하기 위해 노력합니다.
-      </p>
-      <br>
-      <p>
-        프론트엔드와 백엔드 모두에 관심이 많으며,
-        사용자에게 가치 있는 서비스를 제공하는 것이 저의 목표입니다.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>프로젝트</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-image">🚀</div>
-        <div class="project-content">
-          <h3>프로젝트 1</h3>
-          <p>프로젝트에 대한 간단한 설명을 여기에 작성합니다. 어떤 문제를 해결했는지, 어떤 기술을 사용했는지 설명하세요.</p>
-          <div class="project-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">MongoDB</span>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub →</a>
-            <a href="#" target="_blank">Live Demo →</a>
+    <div class="section-label">About</div>
+    <h2 class="section-title">데이터 기반으로 제품을 성장시킵니다</h2>
+    <div class="about-grid">
+      <div>
+        <p class="about-text">
+          사용자/비즈니스 니즈를 기반으로 제품 출시부터 고도화, 라이프사이클 관리까지 전 과정을 주도합니다.
+          디자인, 개발, QA, 운영, 사업, 영업, CX/CS, 마케팅 등 광범위한 이해관계자와 협업하여 시너지를 만듭니다.
+        </p>
+        <br>
+        <p class="about-text">
+          Amplitude, Redash, SQL, Tableau, GA, Firebase 등 데이터 분석 도구를 활용한 정량/정성 기반 의사결정으로
+          문제를 해결하고 제품을 관리합니다.
+        </p>
+      </div>
+      <div class="competency-list">
+        <div class="competency-item">
+          <div class="competency-icon" style="background: var(--gradient-1);">&#9881;</div>
+          <div>
+            <h4>Product Lifecycle</h4>
+            <p>출시 ~ 고도화 ~ 운영까지 전 과정 주도</p>
           </div>
         </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">💡</div>
-        <div class="project-content">
-          <h3>프로젝트 2</h3>
-          <p>두 번째 프로젝트에 대한 설명입니다. 주요 기능과 성과를 간단히 소개해보세요.</p>
-          <div class="project-tags">
-            <span class="tag">Vue.js</span>
-            <span class="tag">Express</span>
-            <span class="tag">PostgreSQL</span>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub →</a>
-            <a href="#" target="_blank">Live Demo →</a>
+        <div class="competency-item">
+          <div class="competency-icon" style="background: var(--gradient-2);">&#9733;</div>
+          <div>
+            <h4>Data-Driven Decision</h4>
+            <p>정량/정성 데이터 기반 의사결정 및 실험</p>
           </div>
         </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🎨</div>
-        <div class="project-content">
-          <h3>프로젝트 3</h3>
-          <p>세 번째 프로젝트 설명입니다. 프로젝트를 통해 배운 점이나 특별히 자랑하고 싶은 부분을 작성하세요.</p>
-          <div class="project-tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">API</span>
+        <div class="competency-item">
+          <div class="competency-icon" style="background: var(--gradient-3);">&#9879;</div>
+          <div>
+            <h4>Cross-functional Collaboration</h4>
+            <p>디자인, 개발, 사업, 마케팅 등 다부서 협업</p>
           </div>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub →</a>
-            <a href="#" target="_blank">Live Demo →</a>
+        </div>
+        <div class="competency-item">
+          <div class="competency-icon" style="background: linear-gradient(135deg, #10b981, #0ea5e9);">&#9889;</div>
+          <div>
+            <h4>Growth & Optimization</h4>
+            <p>사용자 유입, 리텐션, 전환율 개선 경험 다수</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Key Highlights -->
+  <section id="highlights">
+    <div class="section-label">Key Highlights</div>
+    <h2 class="section-title">숫자로 증명하는 성과</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-metric">174%</div>
+        <div class="highlight-title">야놀자 누적 회원 성장</div>
+        <div class="highlight-desc">630만 &rarr; 1,100만명 달성. 써드파티 로그인, 카카오 채널, 혜택 플랫폼 등 복합 전략</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-metric">900K+</div>
+        <div class="highlight-title">카카오톡 채널 친구 확보</div>
+        <div class="highlight-desc">10만 미만 &rarr; 3개월 만에 90만명 돌파. 신규 마케팅 채널 개척</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-metric">97%</div>
+        <div class="highlight-title">운영 관리포인트 감소</div>
+        <div class="highlight-desc">바로고 상점 200,000개 &rarr; 법정동 기반 5,300개로 시스템 혁신</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-metric">170%</div>
+        <div class="highlight-title">가입자 증가 속도 향상</div>
+        <div class="highlight-desc">고팍스 월 평균 11,000명 &rarr; 30,000명. 가입/인증 프로세스 개선</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-metric">500%</div>
+        <div class="highlight-title">벅스 iOS 앱 성장</div>
+        <div class="highlight-desc">활성 기기 2만 &rarr; 10만, 앱 내 정기 결제 300명 &rarr; 1,800명</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-metric">50만 MAU</div>
+        <div class="highlight-title">팟티 서비스 성장</div>
+        <div class="highlight-desc">Android 설치 1.5만 &rarr; 17만. 페이큐 퀴즈쇼 iOS 뉴스 카테고리 1위</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">경력</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">원티드랩</div>
+            <div class="timeline-role">Product Owner Manager</div>
+          </div>
+          <span class="timeline-period">2024.11 &mdash; 재직중</span>
+        </div>
+        <div class="timeline-desc">기업 고객을 위한 채용 솔루션 프로덕트를 총괄하며, AI/LLM 기술을 접목하여 차세대 HR 시스템 구축을 리딩</div>
+        <div class="achievement-list">
+          <div class="achievement">AI/LLM 기반 <strong>'원티드 채용 에이전트'</strong> 시스템 기획부터 구축 전반 주도, 채용 소요 시간 단축 달성</div>
+          <div class="achievement">기업-인재 양방향 데이터 분석 기반 <strong>자동 매칭/포지션 제안 서비스</strong> 신설</div>
+          <div class="achievement">채용 핵심 Flow 병목 개선 및 어드민/대시보드 <strong>UX Enhancement</strong></div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">AI/LLM</span>
+          <span class="project-tag">HR Agent</span>
+          <span class="project-tag">Auto Matching</span>
+          <span class="project-tag">UX Enhancement</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">바로고</div>
+            <div class="timeline-role">Product Manager Manager</div>
+          </div>
+          <span class="timeline-period">2023.05 &mdash; 2024.09</span>
+        </div>
+        <div class="timeline-desc">주문 중계 서비스 고릴라와 연관 어드민 Product 및 전사 통합 과제 담당</div>
+        <div class="achievement-list">
+          <div class="achievement">주소 기반 시스템 도입으로 상점 관리포인트 <strong>97% 감소</strong> (200,000개 &rarr; 5,300개)</div>
+          <div class="achievement">배달 분배율 자동화 프로젝트 &mdash; 100,000개 상점 중 <strong>1,000개+ 자동화</strong> 완료</div>
+          <div class="achievement">권역 관리 고도화로 불필요 지원금 비용과 지급 건수 <strong>80% 감소</strong></div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">주소 기반 시스템</span>
+          <span class="project-tag">배달 분배 자동화</span>
+          <span class="project-tag">권역 관리</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">하이퍼커넥트</div>
+            <div class="timeline-role">Product Manager Manager</div>
+          </div>
+          <span class="timeline-period">2022.06 &mdash; 2023.05</span>
+        </div>
+        <div class="timeline-desc">하쿠나 라이브 서비스 운영 효율화 어드민 구축 및 방송 어시스턴트 실험 프로젝트</div>
+        <div class="achievement-list">
+          <div class="achievement">PC 웹 기반 방송 모니터링 시스템 통합으로 업무 효율성 <strong>2배 이상 증가</strong></div>
+          <div class="achievement">금칙어 관리 개선 &mdash; 분석 정확도 상승, 운영 리드타임 <strong>5일 &rarr; 1일</strong></div>
+          <div class="achievement">방송 어시스턴트 '미니미' A/B 실험 설계 및 진행 (1차 800회 &rarr; 2차 2,000회 사용량)</div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">하쿠나 라이브</span>
+          <span class="project-tag">어드민 구축</span>
+          <span class="project-tag">A/B Test</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">야놀자</div>
+            <div class="timeline-role">Product Owner Manager</div>
+          </div>
+          <span class="timeline-period">2020.07 &mdash; 2022.05</span>
+        </div>
+        <div class="timeline-desc">회원, 인증, 혜택, 마케팅 도구 등 야놀자 프로덕트 전반 관리</div>
+        <div class="achievement-list">
+          <div class="achievement">써드파티 간편 로그인 연동 비율 <strong>1% &rarr; 15%+</strong> 달성</div>
+          <div class="achievement">카카오톡 채널 친구 <strong>10만 미만 &rarr; 90만명+</strong> (3개월)</div>
+          <div class="achievement">MY 혜택 PV <strong>1.5~3배</strong>, 혜택 지급 시 <strong>10~30배</strong> 상승</div>
+          <div class="achievement">누적 회원 수 <strong>630만 &rarr; 1,100만명</strong> (174% 성장)</div>
+          <div class="achievement">Braze 도입 리드 &mdash; 실시간 마케팅 캠페인 운영 체계 구축</div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">써드파티 로그인</span>
+          <span class="project-tag">카카오 채널 2.0</span>
+          <span class="project-tag">MY 혜택</span>
+          <span class="project-tag">Braze</span>
+          <span class="project-tag">프로모션</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">스트리미 (고팍스)</div>
+            <div class="timeline-role">Product Manager 팀장</div>
+          </div>
+          <span class="timeline-period">2019.02 &mdash; 2020.07</span>
+        </div>
+        <div class="timeline-desc">암호화폐 거래소 고팍스 플랫폼 성장 및 프로덕트 관리</div>
+        <div class="achievement-list">
+          <div class="achievement">가입/인증/로그인 개선 후 6개월 간 <strong>18만명 증가</strong> (누적 38만명)</div>
+          <div class="achievement">월 평균 가입자 증가 속도 <strong>170% 향상</strong> (11,000명 &rarr; 30,000명)</div>
+          <div class="achievement">추천인 보상 시스템 도입으로 활성 사용자 <strong>30% 증가</strong></div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">가입/인증 개선</span>
+          <span class="project-tag">레버리지 코인</span>
+          <span class="project-tag">추천인 보상</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">NHN</div>
+            <div class="timeline-role">Product Manager</div>
+          </div>
+          <span class="timeline-period">2017.12 &mdash; 2019.02</span>
+        </div>
+        <div class="timeline-desc">오디오 플랫폼 팟티 프로덕트 매니징 및 실시간 퀴즈쇼 페이큐 프로젝트 총괄</div>
+        <div class="achievement-list">
+          <div class="achievement">팟티 Android 앱 설치 <strong>1.5만 &rarr; 17만</strong>, MAU <strong>50만 돌파</strong></div>
+          <div class="achievement">페이큐 3개월 만에 MVP 출시, iOS 뉴스 카테고리 <strong>1위 달성</strong></div>
+          <div class="achievement">페이큐 일 최고 접속자 <strong>24,399명</strong>, 서비스 가입자 5만 &rarr; <strong>50만+</strong></div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">팟티</span>
+          <span class="project-tag">페이큐 퀴즈쇼</span>
+          <span class="project-tag">브랜드 방송</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">NHN벅스</div>
+            <div class="timeline-role">Product Manager</div>
+          </div>
+          <span class="timeline-period">2015.06 &mdash; 2017.12</span>
+        </div>
+        <div class="timeline-desc">음악 플랫폼 벅스의 공통 프로젝트 관리 및 iOS 프로덕트 전담</div>
+        <div class="achievement-list">
+          <div class="achievement">벅스 iOS 활성 기기 <strong>2만 &rarr; 10만</strong> (400% 상승), 정기결제 <strong>500%</strong> 상승</div>
+          <div class="achievement">앱 리뉴얼, 아티스트 소통 플랫폼 '벅스 커넥트' 프로젝트 리드</div>
+          <div class="achievement">Chromecast, BMW ConnectedDrive 등 <strong>제공 플랫폼 다양화</strong></div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">벅스 iOS</span>
+          <span class="project-tag">벅스 커넥트</span>
+          <span class="project-tag">앱 리뉴얼</span>
+          <span class="project-tag">Chromecast</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">이스트에이드 / 이스트소프트</div>
+            <div class="timeline-role">Product Manager</div>
+          </div>
+          <span class="timeline-period">2011.05 &mdash; 2015.06</span>
+        </div>
+        <div class="timeline-desc">zum.com 포털 서비스, 스윙 브라우저, 모바일 줌 프로젝트</div>
+        <div class="achievement-list">
+          <div class="achievement">스윙브라우저 Android 앱 누적 설치 <strong>30만+</strong> 달성</div>
+          <div class="achievement">m.zum.com 하이브리드 앱 <strong>2개월 만에 런칭</strong>, 월간 PV <strong>400만</strong> 달성</div>
+          <div class="achievement">zum.com 2.0 &mdash; 허브줌, 투데이, 줌위젯 등 콘텐츠 생태계 기획/운영</div>
+        </div>
+        <div class="timeline-projects">
+          <span class="project-tag">zum.com</span>
+          <span class="project-tag">스윙브라우저</span>
+          <span class="project-tag">모바일 줌</span>
+          <span class="project-tag">줌위젯</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
   <section id="skills">
-    <h2>스킬</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Frontend</h3>
-        <div class="skill-list">
-          <span class="skill-item">HTML/CSS</span>
-          <span class="skill-item">JavaScript</span>
-          <span class="skill-item">React</span>
-          <span class="skill-item">Vue.js</span>
-          <span class="skill-item">TypeScript</span>
+    <div class="section-label">Skills & Tools</div>
+    <h2 class="section-title">활용 도구</h2>
+    <div class="skills-container">
+      <div class="skill-group">
+        <h3>Product Management</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">Confluence</span>
+          <span class="skill-tag">Notion</span>
+          <span class="skill-tag">Trello</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Zeplin</span>
+          <span class="skill-tag">Slack</span>
         </div>
       </div>
-
-      <div class="skill-category">
-        <h3>Backend</h3>
-        <div class="skill-list">
-          <span class="skill-item">Node.js</span>
-          <span class="skill-item">Express</span>
-          <span class="skill-item">Python</span>
-          <span class="skill-item">Django</span>
-          <span class="skill-item">REST API</span>
+      <div class="skill-group">
+        <h3>Data & Analytics</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Amplitude</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Redash</span>
+          <span class="skill-tag">SQL</span>
         </div>
       </div>
-
-      <div class="skill-category">
-        <h3>Tools & Others</h3>
-        <div class="skill-list">
-          <span class="skill-item">Git</span>
-          <span class="skill-item">GitHub</span>
-          <span class="skill-item">Docker</span>
-          <span class="skill-item">AWS</span>
-          <span class="skill-item">Figma</span>
+      <div class="skill-group">
+        <h3>Marketing & Optimization</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Braze</span>
+          <span class="skill-tag">Google Optimize</span>
+          <span class="skill-tag">Google Webmaster Tools</span>
+          <span class="skill-tag">Google Workspace</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Development & Collaboration</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Agile/Scrum</span>
+          <span class="skill-tag">Sprint Planning</span>
+          <span class="skill-tag">UX Design</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Education -->
+  <section id="education">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">학력</h2>
+    <div class="edu-card">
+      <div class="edu-info">
+        <h3>세종대학교</h3>
+        <p>컴퓨터공학부 디지털콘텐츠과 졸업</p>
+        <p style="font-size:0.8rem; margin-top:0.5rem; color:var(--text-sub);">정보처리기사 (2011)</p>
+      </div>
+      <div class="edu-period">2003.03 &mdash; 2010.08</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
-    <h2>연락처</h2>
-    <div class="contact-content">
-      <p>프로젝트 협업이나 궁금한 점이 있으시다면 언제든지 연락주세요!</p>
-      <div class="contact-links">
-        <a href="mailto:your.email@example.com" class="contact-link">
-          📧 이메일
-        </a>
-        <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-          💻 GitHub
-        </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
-          💼 LinkedIn
-        </a>
-      </div>
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">연락처</h2>
+    <div class="contact-grid">
+      <a href="mailto:faloiiii@gmail.com" class="contact-card">
+        <div class="contact-icon" style="background: var(--accent-light); color: var(--accent);">&#9993;</div>
+        <div>
+          <div class="label">Email</div>
+          <div class="value">faloiiii@gmail.com</div>
+        </div>
+      </a>
+      <a href="tel:+821029610330" class="contact-card">
+        <div class="contact-icon" style="background: #f0fdf4; color: #16a34a;">&#9742;</div>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value">010-2961-0330</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/faloii/" target="_blank" class="contact-card">
+        <div class="contact-icon" style="background: #eff6ff; color: #2563eb;">in</div>
+        <div>
+          <div class="label">LinkedIn</div>
+          <div class="value">linkedin.com/in/faloii</div>
+        </div>
+      </a>
+      <a href="https://faloii.notion.site/b3312bbd7a934a5c96f3fcc8d6fe7c36" target="_blank" class="contact-card">
+        <div class="contact-icon" style="background: #faf5ff; color: #7c3aed;">N</div>
+        <div>
+          <div class="label">Portfolio</div>
+          <div class="value">Notion Portfolio</div>
+        </div>
+      </a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Your Name. All rights reserved.</p>
+    &copy; 2025 손민현. All rights reserved.
   </footer>
 
   <script>
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const headerOffset = 70;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 60;
+          window.scrollTo({ top: y, behavior: 'smooth' });
         }
       });
     });
 
-    // Add active state to navigation
-    window.addEventListener('scroll', () => {
-      let current = '';
-      const sections = document.querySelectorAll('section');
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100) {
-          current = section.getAttribute('id');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
         }
       });
+    }, { threshold: 0.1 });
 
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
+    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
     });
   </script>
+
 </body>
 </html>
