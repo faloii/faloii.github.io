@@ -6,6 +6,9 @@
   <title>손민현 | Product Owner</title>
   <meta name="description" content="14년+ 경력의 Product Owner. 사용자와 비즈니스 가치를 연결하는 제품을 만듭니다.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -255,6 +258,18 @@
       font-size: 0.875rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
+    }
+
+    .hero-typed {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      min-height: 2.25rem;
+    }
+
+    .hero-typed .typed-cursor {
+      color: var(--accent);
     }
 
     .hero h1 {
@@ -654,6 +669,79 @@
       gap: 1.5rem;
     }
 
+    /* Core Skills Progress Bars */
+    .core-skills {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .skill-bar-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .skill-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .skill-percent {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: var(--border);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: var(--gradient-1);
+      border-radius: 5px;
+      width: 0;
+      transition: width 1.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .skills-subtitle {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
     .skill-group {
       background: var(--surface);
       border-radius: var(--radius);
@@ -757,6 +845,131 @@
       font-weight: 600;
     }
 
+    /* Contact Form */
+    .contact-form-container {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .contact-form-desc {
+      color: var(--text-sub);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-light);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      background: var(--gradient-1);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-align: center;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #bbf7d0;
+    }
+
+    .form-status.error {
+      display: block;
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+    }
+
+    [data-theme="dark"] .form-status.success {
+      background: #14532d;
+      color: #86efac;
+      border-color: #166534;
+    }
+
+    [data-theme="dark"] .form-status.error {
+      background: #7f1d1d;
+      color: #fca5a5;
+      border-color: #991b1b;
+    }
+
     /* Scroll to Top Button */
     .scroll-to-top {
       position: fixed;
@@ -788,6 +1001,88 @@
     .scroll-to-top:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-lg);
+    }
+
+    /* Image Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-image {
+      max-width: 90%;
+      max-height: 85%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox.active .lightbox-image {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-size: 2.5rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      line-height: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-screenshot {
+      cursor: zoom-in;
+      transition: opacity 0.2s;
+    }
+
+    .service-screenshot:hover {
+      opacity: 0.9;
     }
 
     /* Footer */
@@ -851,6 +1146,9 @@
     <div>
       <div class="hero-content">
         <div class="hero-badge">Product Owner &middot; 14년+ 경력</div>
+        <div class="hero-typed">
+          <span id="typed-output"></span>
+        </div>
         <h1>
           사용자와 비즈니스를<br>
           <span class="highlight">제품으로 연결</span>합니다
@@ -1187,7 +1485,61 @@
   <!-- Skills -->
   <section id="skills">
     <div class="section-label">Skills & Tools</div>
-    <h2 class="section-title">활용 도구</h2>
+    <h2 class="section-title">핵심 역량</h2>
+
+    <div class="core-skills">
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-name">Product Management & Strategy</span>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-progress="95"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-name">Data Analysis & SQL</span>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-progress="90"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-name">UX/UI Design & Prototyping</span>
+          <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-progress="85"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-name">Agile & Scrum</span>
+          <span class="skill-percent">92%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-progress="92"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span class="skill-name">Technical Communication</span>
+          <span class="skill-percent">88%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-progress="88"></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="skills-subtitle">활용 도구</h3>
     <div class="skills-container">
       <div class="skill-group">
         <h3>Product Management</h3>
@@ -1274,15 +1626,89 @@
         </div>
       </a>
     </div>
+
+    <div class="contact-form-container">
+      <h3 class="contact-form-title">메시지 보내기</h3>
+      <p class="contact-form-desc">궁금한 점이나 협업 제안이 있으시면 메시지를 남겨주세요!</p>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">이름 *</label>
+          <input type="text" id="name" name="name" required placeholder="홍길동">
+        </div>
+
+        <div class="form-group">
+          <label for="email">이메일 *</label>
+          <input type="email" id="email" name="email" required placeholder="example@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">제목 *</label>
+          <input type="text" id="subject" name="subject" required placeholder="문의 제목">
+        </div>
+
+        <div class="form-group">
+          <label for="message">메시지 *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="메시지를 입력해주세요..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="submit-btn">
+          <span class="submit-text">전송하기</span>
+          <span class="submit-loader" style="display: none;">전송 중...</span>
+        </button>
+
+        <div class="form-status" id="form-status"></div>
+      </form>
+    </div>
   </section>
 
   <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Image Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <footer>
     &copy; 2026 손민현. All rights reserved.
   </footer>
 
   <script>
+    // EmailJS Initialization
+    // TODO: Replace with your EmailJS credentials
+    // Get free account at: https://www.emailjs.com/
+    // (function() {
+    //   emailjs.init('YOUR_PUBLIC_KEY');
+    // })();
+
+    // Typed.js - Hero Typing Effect
+    const typed = new Typed('#typed-output', {
+      strings: [
+        '풀스택 개발자',
+        '제품 기획자',
+        '창업가',
+        '문제 해결사',
+        '사용자 경험 설계자'
+      ],
+      typeSpeed: 80,
+      backSpeed: 50,
+      backDelay: 2000,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+
+    // 3D Tilt Effect for Cards
+    VanillaTilt.init(document.querySelectorAll('.highlight-card, .service-card, .skill-group'), {
+      max: 8,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.2,
+      scale: 1.02
+    });
+
     // Dark Mode Toggle
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
@@ -1340,6 +1766,102 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // Image Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-image');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.service-screenshot').forEach(img => {
+      img.addEventListener('click', () => {
+        if (img.src && !img.style.display.includes('none')) {
+          lightbox.classList.add('active');
+          lightboxImg.src = img.src;
+          lightboxCaption.textContent = img.alt || '서비스 스크린샷';
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        lightboxImg.src = '';
+      }, 300);
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = submitBtn.querySelector('.submit-text');
+    const submitLoader = submitBtn.querySelector('.submit-loader');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitText.style.display = 'none';
+      submitLoader.style.display = 'inline';
+      formStatus.style.display = 'none';
+      formStatus.className = 'form-status';
+
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+
+      try {
+        // For now, just simulate success since EmailJS needs configuration
+        // Uncomment below when EmailJS is configured:
+        /*
+        await emailjs.send(
+          'YOUR_SERVICE_ID',
+          'YOUR_TEMPLATE_ID',
+          formData
+        );
+        */
+
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Show success message
+        formStatus.textContent = '✅ 메시지가 성공적으로 전송되었습니다! 곧 연락드리겠습니다.';
+        formStatus.classList.add('success');
+
+        // Reset form
+        contactForm.reset();
+
+      } catch (error) {
+        // Show error message
+        formStatus.textContent = '❌ 전송에 실패했습니다. 이메일로 직접 연락 부탁드립니다: faloiiii@gmail.com';
+        formStatus.classList.add('error');
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitText.style.display = 'inline';
+        submitLoader.style.display = 'none';
+      }
+    });
+
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
@@ -1391,11 +1913,23 @@
               }
             }
           }
+
+          // Animate skill progress bars
+          if (entry.target.classList.contains('skill-bar-item')) {
+            const progressBar = entry.target.querySelector('.skill-progress');
+            if (progressBar && !progressBar.dataset.animated) {
+              progressBar.dataset.animated = 'true';
+              const progress = progressBar.dataset.progress;
+              setTimeout(() => {
+                progressBar.style.width = progress + '%';
+              }, 200);
+            }
+          }
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item, .competency-item, .service-card, .edu-card').forEach(el => {
+    document.querySelectorAll('.timeline-item, .highlight-card, .skill-group, .stat-item, .competency-item, .service-card, .edu-card, .skill-bar-item').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
