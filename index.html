@@ -1564,8 +1564,10 @@
   </footer>
 
   <script>
-    // Typed.js - Hero Typing Effect
-    const typed = new Typed('#typed-output', {
+    // Wait for all deferred scripts to load
+    window.addEventListener('load', function() {
+      // Typed.js - Hero Typing Effect
+      const typed = new Typed('#typed-output', {
       strings: [
         'AI를 동료로 정의하는 사람',
         '지능형 시스템 설계자',
@@ -1762,6 +1764,7 @@
     document.querySelectorAll('.skill-bar-item').forEach(el => {
       observer.observe(el);
     });
+  });
   </script>
 
 </body>
