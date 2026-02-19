@@ -6,18 +6,26 @@
   <title>손민현 | Product Orchestrator</title>
   <meta name="description" content="14년+ 경력의 Product Orchestrator. 개발자, 디자이너, AI 에이전트를 지휘하여 비즈니스 성과를 만들어냅니다.">
 
+  <!-- Performance Hints -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Performance: Preconnect to CDN -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/dist/typed.min.js" as="script">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" as="script">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Defer scripts for performance -->
-  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/dist/typed.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16/dist/typed.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" crossorigin="anonymous"></script>
 
   <!-- Dark Mode - Initialize immediately to prevent flash -->
   <script>
@@ -67,6 +75,7 @@
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Reading Progress Bar */
@@ -93,6 +102,7 @@
       border-bottom: 1px solid var(--border);
       z-index: 1000;
       padding: 0.875rem 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     [data-theme="dark"] nav {
@@ -325,6 +335,7 @@
       background: var(--surface);
       border-radius: var(--radius);
       border: 1px solid var(--border);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .stat-num {
@@ -369,6 +380,11 @@
       background: var(--surface);
       border-radius: 12px;
       border: 1px solid var(--border);
+      transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .competency-item:hover {
+      transform: translateX(4px);
     }
 
     .competency-icon {
@@ -406,7 +422,7 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
       padding: 2rem;
-      transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s, background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .timeline-item:hover {
@@ -503,6 +519,7 @@
       border-radius: var(--radius);
       border: 1px solid var(--border);
       overflow: hidden;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .service-screenshot {
@@ -613,7 +630,7 @@
       border-radius: var(--radius);
       padding: 2rem;
       border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .highlight-card:hover {
@@ -729,6 +746,7 @@
       border-radius: var(--radius);
       padding: 1.75rem;
       border: 1px solid var(--border);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .skill-group h3 {
@@ -763,6 +781,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .edu-info h3 {
@@ -798,7 +817,7 @@
       border: 1px solid var(--border);
       text-decoration: none;
       color: var(--text);
-      transition: all 0.2s;
+      transition: all 0.2s, background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .contact-card:hover {
@@ -942,6 +961,7 @@
       font-size: 0.8rem;
       color: var(--text-sub);
       border-top: 1px solid var(--border);
+      transition: border-color 0.3s ease, color 0.3s ease;
     }
 
     /* Accessibility: Skip to main content */
@@ -1121,13 +1141,18 @@
     <div class="section-label">Side Project</div>
     <h2 class="section-title">운영 서비스</h2>
     <div class="service-card">
-      <img
-        src="images/sskk.png"
-        alt="sskk.co.kr 스크린샷"
-        class="service-screenshot"
-        loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-      >
+      <picture>
+        <source srcset="images/sskk.webp" type="image/webp">
+        <img
+          src="images/sskk.png"
+          alt="sskk.co.kr 스크린샷"
+          class="service-screenshot"
+          loading="lazy"
+          width="1290"
+          height="2796"
+          onerror="this.style.display='none';this.parentElement.nextElementSibling.style.display='flex';"
+        >
+      </picture>
       <div class="service-screenshot-placeholder" style="display:none;">스크린샷 준비 중</div>
       <div class="service-info">
         <span class="service-badge">운영 중</span>
