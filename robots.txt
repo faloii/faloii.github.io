@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://faloii.github.io/sitemap.xml
+Disallow: /
