@@ -40,8 +40,6 @@
       --accent: #4f8ef7;
       --accent-2: #a855f7;
       --green: #22c55e;
-      --amber: #f59e0b;
-      --cyan: #22d3ee;
       --border: rgba(255,255,255,0.07);
       --border-hover: rgba(255,255,255,0.13);
       --radius: 16px;
@@ -202,43 +200,6 @@
       line-height: 1.8;
     }
 
-    /* Status filter */
-    .filter-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 3.5rem 0 2rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.45rem 0.9rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-sub);
-      transition: all 0.2s;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--surface);
-      border-color: var(--border-hover);
-      color: var(--text);
-    }
-
-    .filter-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-    }
-
     /* ── Projects ── */
     .projects-list {
       display: flex;
@@ -332,22 +293,6 @@
       animation: blink 2s infinite;
     }
 
-    .badge-wip {
-      background: rgba(245,158,11,0.1);
-      border: 1px solid rgba(245,158,11,0.25);
-      color: var(--amber);
-    }
-
-    .badge-wip .dot { background: var(--amber); }
-
-    .badge-planned {
-      background: rgba(122,139,168,0.08);
-      border: 1px solid rgba(122,139,168,0.18);
-      color: var(--text-muted);
-    }
-
-    .badge-planned .dot { background: var(--text-muted); }
-
     .project-desc {
       font-size: 0.875rem;
       color: var(--text-sub);
@@ -394,59 +339,10 @@
 
     .project-row:hover .project-action { gap: 0.55rem; }
 
-    .project-action.disabled {
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-
     .project-url {
       font-size: 0.72rem;
       color: var(--text-muted);
       font-family: 'SF Mono', 'Fira Code', monospace;
-    }
-
-    /* Planned cards grid */
-    .planned-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: var(--border);
-    }
-
-    .planned-card {
-      background: var(--surface);
-      padding: 1.75rem;
-      transition: background 0.2s;
-    }
-
-    .planned-card:hover { background: var(--surface-2); }
-
-    .planned-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      border: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-
-    .planned-name {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-
-    .planned-desc {
-      font-size: 0.82rem;
-      color: var(--text-sub);
-      line-height: 1.7;
     }
 
     /* Section label */
@@ -733,10 +629,6 @@
   <!-- ── Live Services ── -->
   <section id="live" style="padding: 0 0 60px;">
     <div class="container">
-      <div class="section-label">
-        <h2>운영 중</h2>
-      </div>
-
       <div class="projects-list fade-in">
 
         <!-- sskk -->
@@ -769,79 +661,6 @@
     </div>
   </section>
 
-  <!-- ── In Progress ── -->
-  <section id="wip" style="padding: 0 0 60px;">
-    <div class="container">
-      <div class="section-label">
-        <h2>진행 중</h2>
-      </div>
-
-      <div class="projects-list fade-in">
-
-        <!-- WIP placeholder 1 -->
-        <div class="project-row no-link">
-          <div class="project-left">
-            <div class="project-icon-wrap" style="background: rgba(245,158,11,0.08);">🤖</div>
-            <div class="project-meta">
-              <div class="project-name-row">
-                <span class="project-name">AI 기반 서비스 (준비 중)</span>
-                <span class="status-badge badge-wip"><span class="dot"></span>WIP</span>
-              </div>
-              <p class="project-desc">
-                현재 구체적인 내용을 공개하기 어렵지만, AI를 활용한 새로운 서비스를 개발 중입니다. 관심 있으시면 아래에 의견을 남겨주세요.
-              </p>
-              <div class="project-tags">
-                <span class="tag">AI</span>
-                <span class="tag">비공개</span>
-                <span class="tag">개발 중</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-right">
-            <span class="project-action disabled">공개 예정</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Planned ── -->
-  <section id="planned" style="padding: 0 0 80px;">
-    <div class="container">
-      <div class="section-label">
-        <h2>기획 중 · 검토 중</h2>
-      </div>
-
-      <div class="planned-grid fade-in">
-        <div class="planned-card">
-          <div class="planned-icon" style="background: rgba(34,211,238,0.08);">📋</div>
-          <div class="project-name-row" style="margin-bottom:0.5rem;">
-            <span class="planned-name">아이디어 A</span>
-            <span class="status-badge badge-planned"><span class="dot"></span>Planned</span>
-          </div>
-          <p class="planned-desc">아직 구체화 단계입니다. 어떤 서비스가 필요하신지 의견 주시면 방향을 잡는 데 참고합니다.</p>
-        </div>
-        <div class="planned-card">
-          <div class="planned-icon" style="background: rgba(79,142,247,0.08);">🔍</div>
-          <div class="project-name-row" style="margin-bottom:0.5rem;">
-            <span class="planned-name">아이디어 B</span>
-            <span class="status-badge badge-planned"><span class="dot"></span>Planned</span>
-          </div>
-          <p class="planned-desc">시장 검증 중입니다. 비슷한 문제를 겪고 계신 분이 있다면 꼭 이야기 나누고 싶습니다.</p>
-        </div>
-        <div class="planned-card">
-          <div class="planned-icon" style="background: rgba(168,85,247,0.08);">💡</div>
-          <div class="project-name-row" style="margin-bottom:0.5rem;">
-            <span class="planned-name">아이디어 C</span>
-            <span class="status-badge badge-planned"><span class="dot"></span>Planned</span>
-          </div>
-          <p class="planned-desc">아직 이름도 없습니다. 어떤 게 필요하세요? 아래에서 자유롭게 제안해주세요.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── Feedback ── -->
   <section id="feedback">
     <div class="container">
@@ -858,28 +677,16 @@
           </div>
 
           <form class="feedback-form" id="feedback-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="service-select">어떤 서비스에 대한 의견인가요?</label>
-                <select class="form-select" id="service-select" name="service">
-                  <option value="">서비스 선택</option>
-                  <option value="sskk">sskk.co.kr (쓰끄)</option>
-                  <option value="wip">진행 중인 서비스</option>
-                  <option value="new">새로운 아이디어 제안</option>
-                  <option value="other">기타</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="contact-input">연락처 (선택, 답장 원하시면 남겨주세요)</label>
-                <input
-                  class="form-input"
-                  id="contact-input"
-                  name="contact"
-                  type="text"
-                  placeholder="이메일 또는 @트위터 등"
-                  autocomplete="off"
-                >
-              </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-input">연락처 (선택, 답장 원하시면 남겨주세요)</label>
+              <input
+                class="form-input"
+                id="contact-input"
+                name="contact"
+                type="text"
+                placeholder="이메일 또는 @트위터 등"
+                autocomplete="off"
+              >
             </div>
 
             <div class="form-group">
@@ -934,28 +741,17 @@
     document.getElementById('feedback-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const service = document.getElementById('service-select').value;
       const contact = document.getElementById('contact-input').value.trim();
       const message = document.getElementById('feedback-text').value.trim();
 
       if (!message) return;
 
-      const serviceLabel = {
-        sskk: 'sskk.co.kr (쓰끄)',
-        wip: '진행 중인 서비스',
-        new: '새로운 아이디어 제안',
-        other: '기타',
-        '': '미선택'
-      }[service] || service;
-
-      const subject = encodeURIComponent('[faloii 피드백] ' + serviceLabel);
+      const subject = encodeURIComponent('[sskk 피드백]');
       const body = encodeURIComponent(
-        '서비스: ' + serviceLabel + '\n' +
-        (contact ? '연락처: ' + contact + '\n' : '') +
-        '\n의견:\n' + message
+        (contact ? '연락처: ' + contact + '\n\n' : '') +
+        '의견:\n' + message
       );
 
-      // Show success immediately, open mail client
       document.getElementById('form-wrapper').style.display = 'none';
       document.getElementById('feedback-success').classList.add('show');
 
