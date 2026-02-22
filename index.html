@@ -3,60 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>faloii — AI-Driven Product Studio</title>
-  <meta name="description" content="faloii는 AI와 데이터를 중심으로 제품을 만들고 운영합니다. 지능형 시스템 설계, AI 에이전트 구축, 프로덕트 컨설팅.">
-  <meta name="keywords" content="faloii, AI Product Studio, Product Orchestrator, AI Agent, 프로덕트 스튜디오, 손민현, sskk">
+  <title>faloii — 만들고 있는 것들</title>
+  <meta name="description" content="faloii가 현재 진행 중이거나 준비 중인 서비스들을 소개합니다. 솔직한 피드백을 기다립니다.">
+  <meta name="keywords" content="faloii, sskk, 사이드 프로젝트, 서비스, 피드백">
   <meta name="author" content="faloii">
 
   <link rel="canonical" href="https://faloii.github.io/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://faloii.github.io/">
-  <meta property="og:title" content="faloii — AI-Driven Product Studio">
-  <meta property="og:description" content="AI와 데이터를 중심으로 제품을 만들고 운영합니다.">
+  <meta property="og:title" content="faloii — 만들고 있는 것들">
+  <meta property="og:description" content="faloii가 진행 중이거나 준비 중인 서비스들. 솔직한 피드백을 기다립니다.">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="faloii">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="faloii — AI-Driven Product Studio">
-  <meta name="twitter:description" content="AI와 데이터를 중심으로 제품을 만들고 운영합니다.">
+  <meta name="twitter:title" content="faloii — 만들고 있는 것들">
+  <meta name="twitter:description" content="진행 중이거나 준비 중인 서비스들. 솔직한 피드백을 기다립니다.">
 
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'mailto: self'; frame-ancestors 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "faloii",
-    "url": "https://faloii.github.io/",
-    "description": "AI-Driven Product Studio",
-    "email": "faloiiii@gmail.com",
-    "sameAs": ["https://www.linkedin.com/in/faloii/"]
-  }
-  </script>
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #080c14;
-      --surface: #0f1623;
-      --surface-2: #141d2e;
-      --text: #e8edf5;
+      --bg: #090d15;
+      --surface: #0f1520;
+      --surface-2: #141c2b;
+      --surface-3: #1a2336;
+      --text: #e4eaf5;
       --text-sub: #7a8ba8;
-      --text-muted: #4a5a72;
+      --text-muted: #3d4f66;
       --accent: #4f8ef7;
       --accent-2: #a855f7;
-      --accent-3: #22d3ee;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --cyan: #22d3ee;
       --border: rgba(255,255,255,0.07);
-      --border-hover: rgba(255,255,255,0.14);
-      --glow: rgba(79, 142, 247, 0.15);
-      --radius-sm: 10px;
+      --border-hover: rgba(255,255,255,0.13);
       --radius: 16px;
-      --radius-lg: 24px;
+      --radius-lg: 22px;
     }
 
     html { scroll-behavior: smooth; }
@@ -69,321 +58,373 @@
       overflow-x: hidden;
     }
 
-    /* ─── Background Grid ─── */
+    /* Grid background */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
+        linear-gradient(rgba(79,142,247,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,142,247,0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
       pointer-events: none;
       z-index: 0;
     }
 
-    /* ─── Nav ─── */
+    /* ── Nav ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 0;
       border-bottom: 1px solid var(--border);
-      background: rgba(8,12,20,0.85);
+      background: rgba(9,13,21,0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
     }
 
     .nav-inner {
-      max-width: 1140px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 0 2rem;
-      height: 64px;
+      padding: 0 1.75rem;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .nav-logo {
-      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: var(--text);
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
-    .nav-logo .dot {
+    .logo-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 8px var(--accent);
-      animation: pulse 2.5s ease-in-out infinite;
+      box-shadow: 0 0 8px rgba(79,142,247,0.7);
+      animation: blink 2.5s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.85); }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
-    .nav-links {
+    .nav-right {
       display: flex;
       align-items: center;
-      gap: 2rem;
-      list-style: none;
+      gap: 1.25rem;
     }
 
-    .nav-links a {
+    .nav-link {
+      font-size: 0.85rem;
       color: var(--text-sub);
       text-decoration: none;
-      font-size: 0.875rem;
       font-weight: 500;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-link:hover { color: var(--text); }
 
-    .nav-cta {
+    .nav-feedback-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 1.1rem;
-      background: var(--accent);
-      color: #fff !important;
+      gap: 0.35rem;
+      padding: 0.45rem 1rem;
+      background: rgba(79,142,247,0.12);
+      border: 1px solid rgba(79,142,247,0.25);
       border-radius: 8px;
-      font-weight: 600 !important;
-      font-size: 0.85rem !important;
-      transition: opacity 0.2s, transform 0.2s !important;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
-    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); color: #fff !important; }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      width: 40px;
-      height: 40px;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: var(--text-sub);
-      font-size: 1.2rem;
+    .nav-feedback-btn:hover {
+      background: rgba(79,142,247,0.2);
+      border-color: rgba(79,142,247,0.4);
     }
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .mobile-menu-btn { display: flex; }
-      .nav-links.open {
-        display: flex;
-        position: fixed;
-        top: 64px; left: 0; right: 0;
-        flex-direction: column;
-        background: var(--surface);
-        border-bottom: 1px solid var(--border);
-        padding: 1.5rem 2rem;
-        gap: 1.25rem;
-      }
-    }
-
-    /* ─── Shared Layouts ─── */
+    /* ── Container ── */
     .container {
-      max-width: 1140px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.75rem;
       position: relative;
       z-index: 1;
     }
 
-    section { padding: 100px 0; }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-sub);
-      line-height: 1.8;
-      max-width: 560px;
-    }
-
-    /* ─── Hero ─── */
+    /* ── Hero ── */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 80px;
+      padding: 140px 0 80px;
     }
 
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-label {
+    .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(79,142,247,0.1);
-      border: 1px solid rgba(79,142,247,0.25);
-      border-radius: 20px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-label .live {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 6px #22c55e;
-      animation: pulse 2s infinite;
-    }
-
-    .hero-title {
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
-    .hero-title .gradient-text {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent-3) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--text-muted);
     }
 
-    .hero-desc {
-      font-size: 1.15rem;
+    h1.hero-title {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
       color: var(--text-sub);
+      max-width: 500px;
       line-height: 1.8;
-      margin-bottom: 2.5rem;
-      max-width: 480px;
     }
 
-    .hero-actions {
+    /* Status filter */
+    .filter-bar {
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 3.5rem 0 2rem;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
+    .filter-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1.75rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff;
-      text-decoration: none;
-      border-radius: var(--radius-sm);
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 24px rgba(79,142,247,0.3);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(79,142,247,0.4);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1.75rem;
+      gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
       background: transparent;
       color: var(--text-sub);
-      text-decoration: none;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1px solid var(--border);
       transition: all 0.2s;
     }
 
-    .btn-secondary:hover {
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--surface);
       border-color: var(--border-hover);
       color: var(--text);
-      background: var(--surface);
     }
 
-    /* Hero Visual */
-    .hero-visual {
-      position: relative;
+    .filter-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
     }
 
-    .hero-card-stack {
-      position: relative;
-      height: 400px;
-    }
-
-    .hero-card {
-      position: absolute;
-      background: var(--surface);
+    /* ── Projects ── */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--border);
+      margin-bottom: 1.5rem;
     }
 
-    .hero-card:hover {
-      transform: translateY(-4px) !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    .project-row {
+      background: var(--surface);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      padding: 1.75rem 2rem;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .hero-card.card-main {
-      top: 40px; left: 0; right: 0;
-      background: var(--surface-2);
-      border-color: rgba(79,142,247,0.2);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(79,142,247,0.1);
+    .project-row:hover { background: var(--surface-2); }
+
+    .project-row.no-link { cursor: default; }
+    .project-row.no-link:hover { background: var(--surface); }
+
+    .project-left {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
     }
 
-    .hero-card.card-stat {
-      bottom: 20px; right: 0;
-      width: 200px;
-      background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(168,85,247,0.15));
-      border-color: rgba(79,142,247,0.25);
-      z-index: 2;
-      transform: rotate(2deg);
+    .project-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
     }
 
-    .hero-card.card-tag {
-      top: 0; right: 20px;
-      background: rgba(34,211,238,0.08);
-      border-color: rgba(34,211,238,0.2);
-      z-index: 2;
-      transform: rotate(-2deg);
+    .project-meta { flex: 1; }
+
+    .project-name-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
     }
 
-    .card-icon {
+    .project-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .status-badge .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+
+    .badge-live {
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      color: var(--green);
+    }
+
+    .badge-live .dot {
+      background: var(--green);
+      box-shadow: 0 0 5px var(--green);
+      animation: blink 2s infinite;
+    }
+
+    .badge-wip {
+      background: rgba(245,158,11,0.1);
+      border: 1px solid rgba(245,158,11,0.25);
+      color: var(--amber);
+    }
+
+    .badge-wip .dot { background: var(--amber); }
+
+    .badge-planned {
+      background: rgba(122,139,168,0.08);
+      border: 1px solid rgba(122,139,168,0.18);
+      color: var(--text-muted);
+    }
+
+    .badge-planned .dot { background: var(--text-muted); }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+      max-width: 560px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 0.2rem 0.55rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .project-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      min-width: 100px;
+    }
+
+    .project-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: auto;
+      transition: gap 0.2s;
+    }
+
+    .project-row:hover .project-action { gap: 0.55rem; }
+
+    .project-action.disabled {
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .project-url {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* Planned cards grid */
+    .planned-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .planned-card {
+      background: var(--surface);
+      padding: 1.75rem;
+      transition: background 0.2s;
+    }
+
+    .planned-card:hover { background: var(--surface-2); }
+
+    .planned-icon {
       width: 40px;
       height: 40px;
       border-radius: 10px;
@@ -391,677 +432,249 @@
       align-items: center;
       justify-content: center;
       font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-
-    .card-sub {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-    }
-
-    .card-metric {
-      font-size: 2rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: -0.03em;
-    }
-
-    .card-metric-label {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-      margin-top: 0.2rem;
-    }
-
-    .card-tag-text {
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--accent-3);
-    }
-
-    .code-block {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.8rem;
-      line-height: 1.7;
-      color: var(--text-sub);
-      margin-top: 0.75rem;
-    }
-
-    .code-block .kw { color: var(--accent-2); }
-    .code-block .fn { color: var(--accent); }
-    .code-block .str { color: #86efac; }
-    .code-block .cm { color: var(--text-muted); }
-
-    /* Hero Stats */
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .hero-stat-num {
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      background: linear-gradient(135deg, var(--accent), var(--accent-3));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-stat-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.2rem;
-    }
-
-    /* ─── Projects ─── */
-    #projects { background: linear-gradient(180deg, transparent 0%, rgba(79,142,247,0.03) 50%, transparent 100%); }
-
-    .projects-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3rem;
-    }
-
-    .project-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
-    }
-
-    .project-card.featured {
-      border-color: rgba(79,142,247,0.2);
-    }
-
-    .project-card.featured:hover {
-      border-color: rgba(79,142,247,0.4);
-      box-shadow: 0 8px 40px rgba(79,142,247,0.1);
-    }
-
-    .project-info {
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .project-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       margin-bottom: 1rem;
     }
 
-    .project-status.live {
-      color: #22c55e;
-    }
-
-    .project-status.live::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 6px #22c55e;
-      animation: pulse 2s infinite;
-    }
-
-    .project-status.wip {
-      color: #f59e0b;
-    }
-
-    .project-status.wip::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #f59e0b;
-    }
-
-    .project-name {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-tagline {
-      font-size: 0.9rem;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-desc {
+    .planned-name {
       font-size: 0.95rem;
-      color: var(--text-sub);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .tag {
-      padding: 0.3rem 0.7rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      color: var(--text-sub);
-      font-weight: 500;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.875rem;
-      transition: gap 0.2s;
-    }
-
-    .project-link:hover { gap: 0.7rem; }
-
-    .project-visual {
-      background: var(--surface-2);
-      border-left: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      min-height: 300px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .project-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      border-radius: var(--radius-sm);
-      opacity: 0.9;
-      transition: opacity 0.3s, transform 0.4s;
-    }
-
-    .project-card:hover .project-visual img {
-      opacity: 1;
-      transform: scale(1.02);
-    }
-
-    .project-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .project-placeholder .emoji { font-size: 3rem; }
-    .project-placeholder .pl-text { font-size: 0.85rem; }
-
-    /* Small projects grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-mini {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .project-mini:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-3px);
-    }
-
-    .project-mini .mini-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-mini h3 {
-      font-size: 1rem;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 0.4rem;
     }
 
-    .project-mini p {
-      font-size: 0.875rem;
+    .planned-desc {
+      font-size: 0.82rem;
       color: var(--text-sub);
       line-height: 1.7;
-      margin-bottom: 1rem;
     }
 
-    /* ─── Services ─── */
-    #services {
-      position: relative;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-top: 3rem;
-    }
-
-    .service-item {
-      background: var(--surface);
-      padding: 2rem;
-      transition: background 0.2s;
-    }
-
-    .service-item:hover { background: var(--surface-2); }
-
-    .service-number {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
+    /* Section label */
+    .section-label {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
+      gap: 0.75rem;
       margin-bottom: 1.25rem;
     }
 
-    .service-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.6rem;
-    }
-
-    .service-desc {
-      font-size: 0.875rem;
-      color: var(--text-sub);
-      line-height: 1.7;
-    }
-
-    /* ─── Achievements ─── */
-    #achievements {
-      background: linear-gradient(135deg, rgba(79,142,247,0.04) 0%, rgba(168,85,247,0.04) 100%);
-    }
-
-    .achievements-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-
-    .achievement-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .achievement-card:hover {
-      border-color: rgba(79,142,247,0.3);
-      transform: translateY(-3px);
-    }
-
-    .achievement-metric {
-      font-size: 2.25rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-    }
-
-    .achievement-title {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-
-    .achievement-desc {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      line-height: 1.65;
-    }
-
-    /* ─── About / Manifesto ─── */
-    #about {
-      position: relative;
-    }
-
-    .about-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .manifesto {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .manifesto-item {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .manifesto-num {
+    .section-label h2 {
       font-size: 0.7rem;
       font-weight: 700;
-      color: var(--accent);
-      padding-top: 0.2rem;
-      min-width: 20px;
-    }
-
-    .manifesto-item h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-    }
-
-    .manifesto-item p {
-      font-size: 0.875rem;
-      color: var(--text-sub);
-      line-height: 1.7;
-    }
-
-    .profile-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-    }
-
-    .profile-top {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .profile-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-
-    .profile-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .profile-title {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      margin-top: 0.1rem;
-    }
-
-    .career-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.875rem;
-    }
-
-    .career-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.85rem;
-    }
-
-    .career-company {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .career-role {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-    }
-
-    .career-period {
-      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--text-muted);
-      text-align: right;
     }
 
-    .profile-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
-    .profile-link {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0.875rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text-sub);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: all 0.2s;
+    /* ── Feedback ── */
+    #feedback {
+      padding: 80px 0 100px;
     }
 
-    .profile-link:hover {
-      border-color: var(--border-hover);
-      color: var(--text);
-      background: var(--surface-2);
-    }
-
-    /* ─── Contact ─── */
-    #contact {
-      padding-bottom: 120px;
-    }
-
-    .contact-box {
+    .feedback-box {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 3.5rem;
-      text-align: center;
-      max-width: 680px;
-      margin: 3rem auto 0;
+      padding: 2.5rem;
       position: relative;
       overflow: hidden;
     }
 
-    .contact-box::before {
+    .feedback-box::before {
       content: '';
       position: absolute;
-      top: -1px; left: 10%; right: 10%;
+      top: -1px; left: 15%; right: 15%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      background: linear-gradient(90deg, transparent, rgba(79,142,247,0.5), transparent);
     }
 
-    .contact-box h3 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-box p {
-      color: var(--text-sub);
-      font-size: 0.95rem;
-      line-height: 1.7;
+    .feedback-header {
       margin-bottom: 2rem;
     }
 
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      gap: 0.875rem;
-      flex-wrap: wrap;
+    .feedback-header h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
     }
 
-    .contact-link {
+    .feedback-header p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+
+    .form-select,
+    .form-input,
+    .form-textarea {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem 0.9rem;
+      color: var(--text);
+      font-size: 0.875rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5a72' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      padding-right: 2.25rem;
+      cursor: pointer;
+    }
+
+    .form-select:focus,
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: rgba(79,142,247,0.5);
+    }
+
+    .form-select option { background: var(--surface-2); }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    .form-submit {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.875rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .contact-link.primary {
+      padding: 0.825rem 1.75rem;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(79,142,247,0.25);
+      align-self: flex-start;
     }
 
-    .contact-link.primary:hover {
+    .form-submit:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(79,142,247,0.35);
     }
 
-    .contact-link.secondary {
-      background: transparent;
-      color: var(--text-sub);
-      border: 1px solid var(--border);
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
     }
 
-    .contact-link.secondary:hover {
-      border-color: var(--border-hover);
+    /* Success message */
+    .feedback-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 0.75rem;
+    }
+
+    .feedback-success.show { display: flex; }
+
+    .success-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(34,197,94,0.15);
+      border: 1px solid rgba(34,197,94,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .feedback-success h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
       color: var(--text);
-      background: var(--surface-2);
     }
 
-    /* ─── Footer ─── */
+    .feedback-success p {
+      font-size: 0.875rem;
+      color: var(--text-sub);
+    }
+
+    /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
+      padding: 1.75rem;
       position: relative;
       z-index: 1;
     }
 
     .footer-inner {
-      max-width: 1140px;
+      max-width: 980px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .footer-logo {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 800;
-      color: var(--text);
       letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     .footer-copy {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
-    .footer-links {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .footer-links a {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--text-sub); }
-
-    /* ─── Animations ─── */
+    /* ── Fade-in ── */
     .fade-in {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
 
     .fade-in.visible {
@@ -1069,29 +682,18 @@
       transform: translateY(0);
     }
 
-    /* ─── Responsive ─── */
-    @media (max-width: 960px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
-      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .achievements-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: 1fr; }
-      .project-card { grid-template-columns: 1fr; }
-      .project-visual { min-height: 220px; border-left: none; border-top: 1px solid var(--border); }
-    }
-
+    /* ── Responsive ── */
     @media (max-width: 640px) {
-      section { padding: 70px 0; }
-      .achievements-grid { grid-template-columns: 1fr 1fr; }
-      .projects-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .contact-box { padding: 2rem 1.5rem; }
-      .hero-stats { grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+      #hero { padding: 110px 0 60px; }
+      .project-row { grid-template-columns: 1fr; }
+      .project-right { flex-direction: row; align-items: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .feedback-box { padding: 1.75rem 1.25rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
     /* Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 3px; }
   </style>
@@ -1099,375 +701,213 @@
 <body>
 
   <!-- Nav -->
-  <nav role="navigation" aria-label="메인 네비게이션">
+  <nav>
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <span class="dot"></span>
+        <span class="logo-dot"></span>
         faloii
       </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-cta">Contact →</a></li>
-      </ul>
-      <button class="mobile-menu-btn" id="menu-btn" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <div class="nav-right">
+        <a href="#feedback" class="nav-feedback-btn">💬 의견 남기기</a>
+      </div>
     </div>
   </nav>
 
   <main>
 
-  <!-- ─── Hero ─── -->
+  <!-- ── Hero ── -->
   <section id="hero">
     <div class="container">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <div class="hero-label">
-            <span class="live"></span>
-            AI-Driven Product Studio
-          </div>
-          <h1 class="hero-title">
-            제품을 만들고<br>
-            <span class="gradient-text">시스템을 설계합니다</span>
-          </h1>
-          <p class="hero-desc">
-            AI와 데이터를 중심으로 제품을 기획하고, 운영하고, 성장시킵니다.
-            기능을 넘어 지능형 시스템을 설계하는 프로덕트 스튜디오입니다.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn-primary">
-              프로젝트 보기
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a href="#contact" class="btn-secondary">
-              문의하기
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="hero-stats">
-            <div>
-              <div class="hero-stat-num">14+</div>
-              <div class="hero-stat-label">Years Exp.</div>
-            </div>
-            <div>
-              <div class="hero-stat-num">30+</div>
-              <div class="hero-stat-label">Projects</div>
-            </div>
-            <div>
-              <div class="hero-stat-num">9</div>
-              <div class="hero-stat-label">Companies</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-card-stack">
-            <div class="hero-card card-tag">
-              <div class="card-tag-text">🤖 AI Agent Deployed</div>
-              <div class="card-sub" style="margin-top:0.3rem">원티드랩 AI 에이전트 → Production</div>
-            </div>
-            <div class="hero-card card-main">
-              <div class="card-icon" style="background: rgba(79,142,247,0.15);">⚙️</div>
-              <div class="card-title">지능형 시스템 설계</div>
-              <div class="code-block">
-                <span class="kw">const</span> studio = <span class="fn">faloii</span>({<br>
-                &nbsp;&nbsp;approach: <span class="str">'AI-first'</span>,<br>
-                &nbsp;&nbsp;stack: [<span class="str">'product'</span>, <span class="str">'ai'</span>, <span class="str">'data'</span>],<br>
-                &nbsp;&nbsp;<span class="cm">// 기능 → 시스템으로</span><br>
-                })
-              </div>
-            </div>
-            <div class="hero-card card-stat">
-              <div class="card-metric">97%</div>
-              <div class="card-metric-label">운영 포인트 감소<br>바로고 프로젝트</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Projects ─── -->
-  <section id="projects">
-    <div class="container">
-      <div class="projects-header">
-        <div>
-          <div class="eyebrow">Projects</div>
-          <h2 class="section-title">직접 만들고 운영하는 서비스</h2>
-        </div>
-        <p class="section-desc" style="margin-bottom:0; max-width: 340px; font-size: 0.9rem;">
-          기획부터 개발, 운영까지 전 과정을 직접 주도합니다.
-        </p>
-      </div>
-
-      <!-- Featured Project -->
-      <div class="project-card featured fade-in">
-        <div class="project-info">
-          <div>
-            <div class="project-status live">운영 중</div>
-            <h3 class="project-name">ㅅㅅㅋㅋ 쓰끄</h3>
-            <div class="project-tagline">sskk.co.kr</div>
-            <p class="project-desc">
-              24시간 후 자동으로 사라지는 익명 커뮤니티.
-              부담 없이 자유롭게 이야기를 나눌 수 있는
-              휘발성 소셜 플랫폼입니다. 익명성과 휘발성이라는
-              두 가지 핵심 가치로 기존 커뮤니티와 차별화합니다.
-            </p>
-            <div class="project-tags">
-              <span class="tag">익명 커뮤니티</span>
-              <span class="tag">24시간 휘발</span>
-              <span class="tag">소셜 플랫폼</span>
-              <span class="tag">사이드 프로젝트</span>
-            </div>
-          </div>
-          <a href="https://www.sskk.co.kr/" target="_blank" rel="noopener noreferrer" class="project-link">
-            서비스 바로가기 <span>→</span>
-          </a>
-        </div>
-        <div class="project-visual">
-          <picture>
-            <source srcset="images/sskk.webp" type="image/webp">
-            <img
-              src="images/sskk.png"
-              alt="sskk.co.kr 스크린샷"
-              loading="lazy"
-              onerror="this.closest('.project-visual').innerHTML='<div class=\'project-placeholder\'><div class=\'emoji\'>💬</div><div class=\'pl-text\'>sskk.co.kr</div></div>'"
-            >
-          </picture>
-        </div>
-      </div>
-
-      <!-- Mini Projects -->
-      <div class="projects-grid fade-in">
-        <div class="project-mini">
-          <div class="mini-icon" style="background: rgba(79,142,247,0.12);">🤖</div>
-          <h3>AI 에이전트 시스템</h3>
-          <p>원티드랩 AI 에이전트 구축 프로젝트. 채용 플랫폼에 LLM 기반 자동화 파이프라인을 도입하여 운영 효율을 획기적으로 개선.</p>
-          <div class="project-tags">
-            <span class="tag">LLM</span>
-            <span class="tag">AI Agent</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-        <div class="project-mini">
-          <div class="mini-icon" style="background: rgba(168,85,247,0.12);">🗺️</div>
-          <h3>배달 권역 시스템 재설계</h3>
-          <p>바로고 상점 기반 20만 개 관리 포인트를 법정동 5,300개로 전환. 운영 관리포인트 97% 감소, B2B 수행건수 상위권 달성.</p>
-          <div class="project-tags">
-            <span class="tag">System Design</span>
-            <span class="tag">바로고</span>
-            <span class="tag">97% 개선</span>
-          </div>
-        </div>
-        <div class="project-mini">
-          <div class="mini-icon" style="background: rgba(34,211,238,0.12);">📈</div>
-          <h3>그로스 & 멤버십 플랫폼</h3>
-          <p>야놀자 630만 → 1,100만 회원 174% 성장. 가입 이탈율 20% 감소, 카카오 채널 친구 10만 → 100만 달성.</p>
-          <div class="project-tags">
-            <span class="tag">Growth</span>
-            <span class="tag">야놀자</span>
-            <span class="tag">174% 성장</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Services ─── -->
-  <section id="services">
-    <div class="container">
-      <div class="eyebrow">Services</div>
-      <h2 class="section-title">제공하는 것들</h2>
-      <p class="section-desc">
-        제품 기획부터 AI 시스템 설계까지, 비즈니스 성과를 만드는 데 집중합니다.
+      <div class="hero-eyebrow">Projects & Services</div>
+      <h1 class="hero-title">
+        지금 만들고 있는 것들,<br>
+        솔직한 의견이 필요합니다.
+      </h1>
+      <p class="hero-sub">
+        현재 운영 중이거나 준비 중인 서비스를 공유합니다.
+        써보셨다면, 생각해보셨다면 — 어떤 의견이든 환영합니다.
       </p>
-
-      <div class="services-grid fade-in">
-        <div class="service-item">
-          <div class="service-number">01</div>
-          <div class="service-icon" style="background: rgba(79,142,247,0.12);">🎼</div>
-          <div class="service-name">Product Orchestration</div>
-          <p class="service-desc">개발자, 디자이너, AI 에이전트를 조율하여 비즈니스 임팩트를 만들어냅니다. 제품 라이프사이클 전체를 설계하고 최적화합니다.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">02</div>
-          <div class="service-icon" style="background: rgba(168,85,247,0.12);">🤖</div>
-          <div class="service-name">AI 시스템 설계</div>
-          <p class="service-desc">LLM 기반 에이전트 구축, 자동화 파이프라인 설계. 도구가 아닌 동료로서의 AI 시스템을 만들어 운영 효율을 혁신합니다.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">03</div>
-          <div class="service-icon" style="background: rgba(34,211,238,0.12);">📊</div>
-          <div class="service-name">데이터 기반 그로스</div>
-          <p class="service-desc">SQL, Amplitude, Tableau를 활용한 정량적 의사결정. 퍼널 분석부터 그로스 전략 수립까지 데이터로 성과를 증명합니다.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">04</div>
-          <div class="service-icon" style="background: rgba(251,191,36,0.12);">🚀</div>
-          <div class="service-name">0→1 프로덕트 빌딩</div>
-          <p class="service-desc">린한 방식으로 빠르게 검증하고 스케일업합니다. 사이드 프로젝트 기획부터 실제 운영까지 전 과정을 직접 경험했습니다.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">05</div>
-          <div class="service-icon" style="background: rgba(239,68,68,0.12);">🎯</div>
-          <div class="service-name">복잡계 시스템 최적화</div>
-          <p class="service-desc">대규모 운영 데이터와 복잡한 이해관계자 구조를 정리하고, 효율적인 시스템으로 재설계합니다.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">06</div>
-          <div class="service-icon" style="background: rgba(16,185,129,0.12);">🤝</div>
-          <div class="service-name">Product Consulting</div>
-          <p class="service-desc">스타트업부터 대기업까지 7개 이상의 도메인에서 쌓은 경험을 바탕으로 제품 전략 컨설팅을 제공합니다.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ─── Achievements ─── -->
-  <section id="achievements">
+  <!-- ── Live Services ── -->
+  <section id="live" style="padding: 0 0 60px;">
     <div class="container">
-      <div class="eyebrow">Achievements</div>
-      <h2 class="section-title">숫자로 증명한 성과</h2>
-      <p class="section-desc">
-        다양한 도메인에서 만들어낸 정량적 임팩트입니다.
-      </p>
-
-      <div class="achievements-grid fade-in">
-        <div class="achievement-card">
-          <div class="achievement-metric">174%</div>
-          <div class="achievement-title">야놀자 누적 회원 성장</div>
-          <div class="achievement-desc">630만 → 1,100만명 달성. 가입 이탈율 20% 감소, DAU 20% 증가, 구매전환 3배 복합 전략</div>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-metric">1M+</div>
-          <div class="achievement-title">카카오톡 채널 친구</div>
-          <div class="achievement-desc">10만 미만 → 100만명 이상. 레거시 채널 대비 리텐션 2배+, 진입률 1% → 5%</div>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-metric">97%</div>
-          <div class="achievement-title">운영 관리포인트 감소</div>
-          <div class="achievement-desc">바로고 상점 20만 개 → 법정동 5,300개 전환. 권역 외 비용·건수 80% 감소</div>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-metric">3×</div>
-          <div class="achievement-title">구매 전환율 향상</div>
-          <div class="achievement-desc">MY혜택 서비스 개편으로 구매전환 3배. 데이터 기반 개인화 UX 전략 적용</div>
-        </div>
+      <div class="section-label">
+        <h2>운영 중</h2>
       </div>
-    </div>
-  </section>
 
-  <!-- ─── About ─── -->
-  <section id="about">
-    <div class="container">
-      <div class="about-inner">
-        <div>
-          <div class="eyebrow">About</div>
-          <h2 class="section-title">기능을 넘어,<br>시스템을 만듭니다</h2>
-          <p class="section-desc" style="margin-bottom: 2.5rem;">
-            단순히 기능을 기획하는 시대를 넘어, AI와 데이터를 활용한 지능형 시스템을 설계합니다. 14년+ 경력 동안 스타트업부터 대기업까지 7개 이상의 도메인에서 복잡한 문제를 해결해왔습니다.
-          </p>
-          <div class="manifesto">
-            <div class="manifesto-item">
-              <div class="manifesto-num">01</div>
-              <div>
-                <h4>AI를 도구가 아닌 동료로</h4>
-                <p>LLM과 AI 에이전트를 팀의 일원으로 편입시켜 인간과 AI가 함께 시너지를 내는 시스템을 만듭니다.</p>
+      <div class="projects-list fade-in">
+
+        <!-- sskk -->
+        <a href="https://www.sskk.co.kr/" target="_blank" rel="noopener noreferrer" class="project-row">
+          <div class="project-left">
+            <div class="project-icon-wrap" style="background: rgba(168,85,247,0.1);">💬</div>
+            <div class="project-meta">
+              <div class="project-name-row">
+                <span class="project-name">ㅅㅅㅋㅋ 쓰끄</span>
+                <span class="status-badge badge-live"><span class="dot"></span>Live</span>
               </div>
-            </div>
-            <div class="manifesto-item">
-              <div class="manifesto-num">02</div>
-              <div>
-                <h4>데이터로 의사결정</h4>
-                <p>직관이 아닌 SQL, Amplitude, Tableau 기반의 정량적 근거로 의사결정하고 성과를 측정합니다.</p>
-              </div>
-            </div>
-            <div class="manifesto-item">
-              <div class="manifesto-num">03</div>
-              <div>
-                <h4>복잡한 시스템을 단순하게</h4>
-                <p>복잡한 이해관계와 데이터를 명확하게 정리하고, 더 나은 구조로 재설계하여 지속 가능한 시스템을 만듭니다.</p>
+              <p class="project-desc">
+                24시간 후 자동 삭제되는 익명 커뮤니티. 기록이 남지 않아 부담 없이 이야기를 나눌 수 있습니다. 익명성과 휘발성, 두 가지에만 집중합니다.
+              </p>
+              <div class="project-tags">
+                <span class="tag">익명</span>
+                <span class="tag">24시간 휘발</span>
+                <span class="tag">커뮤니티</span>
+                <span class="tag">소셜</span>
               </div>
             </div>
           </div>
+          <div class="project-right">
+            <span class="project-url">sskk.co.kr</span>
+            <span class="project-action">방문하기 →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── In Progress ── -->
+  <section id="wip" style="padding: 0 0 60px;">
+    <div class="container">
+      <div class="section-label">
+        <h2>진행 중</h2>
+      </div>
+
+      <div class="projects-list fade-in">
+
+        <!-- WIP placeholder 1 -->
+        <div class="project-row no-link">
+          <div class="project-left">
+            <div class="project-icon-wrap" style="background: rgba(245,158,11,0.08);">🤖</div>
+            <div class="project-meta">
+              <div class="project-name-row">
+                <span class="project-name">AI 기반 서비스 (준비 중)</span>
+                <span class="status-badge badge-wip"><span class="dot"></span>WIP</span>
+              </div>
+              <p class="project-desc">
+                현재 구체적인 내용을 공개하기 어렵지만, AI를 활용한 새로운 서비스를 개발 중입니다. 관심 있으시면 아래에 의견을 남겨주세요.
+              </p>
+              <div class="project-tags">
+                <span class="tag">AI</span>
+                <span class="tag">비공개</span>
+                <span class="tag">개발 중</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-right">
+            <span class="project-action disabled">공개 예정</span>
+          </div>
         </div>
 
-        <div class="profile-card fade-in">
-          <div class="profile-top">
-            <div class="profile-avatar">👤</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Planned ── -->
+  <section id="planned" style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="section-label">
+        <h2>기획 중 · 검토 중</h2>
+      </div>
+
+      <div class="planned-grid fade-in">
+        <div class="planned-card">
+          <div class="planned-icon" style="background: rgba(34,211,238,0.08);">📋</div>
+          <div class="project-name-row" style="margin-bottom:0.5rem;">
+            <span class="planned-name">아이디어 A</span>
+            <span class="status-badge badge-planned"><span class="dot"></span>Planned</span>
+          </div>
+          <p class="planned-desc">아직 구체화 단계입니다. 어떤 서비스가 필요하신지 의견 주시면 방향을 잡는 데 참고합니다.</p>
+        </div>
+        <div class="planned-card">
+          <div class="planned-icon" style="background: rgba(79,142,247,0.08);">🔍</div>
+          <div class="project-name-row" style="margin-bottom:0.5rem;">
+            <span class="planned-name">아이디어 B</span>
+            <span class="status-badge badge-planned"><span class="dot"></span>Planned</span>
+          </div>
+          <p class="planned-desc">시장 검증 중입니다. 비슷한 문제를 겪고 계신 분이 있다면 꼭 이야기 나누고 싶습니다.</p>
+        </div>
+        <div class="planned-card">
+          <div class="planned-icon" style="background: rgba(168,85,247,0.08);">💡</div>
+          <div class="project-name-row" style="margin-bottom:0.5rem;">
+            <span class="planned-name">아이디어 C</span>
+            <span class="status-badge badge-planned"><span class="dot"></span>Planned</span>
+          </div>
+          <p class="planned-desc">아직 이름도 없습니다. 어떤 게 필요하세요? 아래에서 자유롭게 제안해주세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Feedback ── -->
+  <section id="feedback">
+    <div class="container">
+      <div class="section-label">
+        <h2>의견 남기기</h2>
+      </div>
+
+      <div class="feedback-box fade-in">
+
+        <div id="form-wrapper">
+          <div class="feedback-header">
+            <h2>어떻게 생각하세요?</h2>
+            <p>써보신 서비스에 대한 솔직한 후기, 원하는 기능, 또는 전혀 새로운 아이디어도 환영합니다.<br>모든 의견을 직접 읽고 반영합니다.</p>
+          </div>
+
+          <form class="feedback-form" id="feedback-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="service-select">어떤 서비스에 대한 의견인가요?</label>
+                <select class="form-select" id="service-select" name="service">
+                  <option value="">서비스 선택</option>
+                  <option value="sskk">sskk.co.kr (쓰끄)</option>
+                  <option value="wip">진행 중인 서비스</option>
+                  <option value="new">새로운 아이디어 제안</option>
+                  <option value="other">기타</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-input">연락처 (선택, 답장 원하시면 남겨주세요)</label>
+                <input
+                  class="form-input"
+                  id="contact-input"
+                  name="contact"
+                  type="text"
+                  placeholder="이메일 또는 @트위터 등"
+                  autocomplete="off"
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="feedback-text">의견을 자유롭게 써주세요 *</label>
+              <textarea
+                class="form-textarea"
+                id="feedback-text"
+                name="message"
+                placeholder="불편한 점, 좋았던 점, 원하는 기능, 새로운 아이디어 — 무엇이든 좋습니다."
+                required
+              ></textarea>
+            </div>
+
             <div>
-              <div class="profile-name">손민현 (Son Minhyun)</div>
-              <div class="profile-title">Product Orchestrator · faloii</div>
+              <button type="submit" class="form-submit">
+                💬 의견 보내기
+              </button>
+              <p class="form-note" style="margin-top:0.75rem;">이메일로 직접 전달됩니다. 스팸 없습니다.</p>
             </div>
-          </div>
-          <div class="career-list">
-            <div class="career-item">
-              <div>
-                <div class="career-company">원티드랩</div>
-                <div class="career-role">Senior PM · AI Agent</div>
-              </div>
-              <div class="career-period">2022 —</div>
-            </div>
-            <div class="career-item">
-              <div>
-                <div class="career-company">바로고</div>
-                <div class="career-role">PM · 배달 플랫폼</div>
-              </div>
-              <div class="career-period">2021 — 2022</div>
-            </div>
-            <div class="career-item">
-              <div>
-                <div class="career-company">야놀자</div>
-                <div class="career-role">PM · 그로스 &amp; 멤버십</div>
-              </div>
-              <div class="career-period">2018 — 2021</div>
-            </div>
-            <div class="career-item">
-              <div>
-                <div class="career-company">+6 Companies</div>
-                <div class="career-role">7개 이상의 도메인 경험</div>
-              </div>
-              <div class="career-period">2010 —</div>
-            </div>
-          </div>
-          <div class="profile-links">
-            <a href="https://www.linkedin.com/in/faloii/" target="_blank" rel="noopener noreferrer" class="profile-link">
-              LinkedIn →
-            </a>
-            <a href="https://github.com/faloii" target="_blank" rel="noopener noreferrer" class="profile-link">
-              GitHub →
-            </a>
-            <a href="mailto:faloiiii@gmail.com" class="profile-link">
-              Email →
-            </a>
-          </div>
+          </form>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ─── Contact ─── -->
-  <section id="contact">
-    <div class="container">
-      <div style="text-align:center;">
-        <div class="eyebrow">Contact</div>
-        <h2 class="section-title">함께 만들어볼까요?</h2>
-      </div>
-      <div class="contact-box fade-in">
-        <h3>프로젝트 문의 · 협업 제안</h3>
-        <p>
-          새로운 프로젝트, 컨설팅 문의, 또는 그냥 이야기라도 나누고 싶으시다면
-          편하게 연락주세요. 빠르게 회신드리겠습니다.
-        </p>
-        <div class="contact-actions">
-          <a href="mailto:faloiiii@gmail.com" class="contact-link primary">
-            ✉️ 이메일 보내기
-          </a>
-          <a href="https://www.linkedin.com/in/faloii/" target="_blank" rel="noopener noreferrer" class="contact-link secondary">
-            LinkedIn 연결 →
-          </a>
+        <div class="feedback-success" id="feedback-success">
+          <div class="success-icon">✓</div>
+          <h3>의견을 받았습니다. 감사합니다!</h3>
+          <p>직접 읽고 반영하겠습니다. 연락처를 남기셨다면 답장 드리겠습니다.</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -1478,45 +918,49 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">faloii</div>
-      <div class="footer-copy">© 2026 faloii. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="https://github.com/faloii" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/faloii/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:faloiiii@gmail.com">Email</a>
-      </div>
+      <div class="footer-copy">© 2026 faloii</div>
     </div>
   </footer>
 
   <script>
-    // Mobile menu
-    const menuBtn = document.getElementById('menu-btn');
-    const navLinks = document.getElementById('nav-links');
-
-    menuBtn.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open);
-      menuBtn.textContent = open ? '✕' : '☰';
-    });
-
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.textContent = '☰';
-      });
-    });
-
-    // Intersection Observer for fade-in
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
+    // Fade-in observer
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.08 }
+    );
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Feedback form → mailto
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const service = document.getElementById('service-select').value;
+      const contact = document.getElementById('contact-input').value.trim();
+      const message = document.getElementById('feedback-text').value.trim();
+
+      if (!message) return;
+
+      const serviceLabel = {
+        sskk: 'sskk.co.kr (쓰끄)',
+        wip: '진행 중인 서비스',
+        new: '새로운 아이디어 제안',
+        other: '기타',
+        '': '미선택'
+      }[service] || service;
+
+      const subject = encodeURIComponent('[faloii 피드백] ' + serviceLabel);
+      const body = encodeURIComponent(
+        '서비스: ' + serviceLabel + '\n' +
+        (contact ? '연락처: ' + contact + '\n' : '') +
+        '\n의견:\n' + message
+      );
+
+      // Show success immediately, open mail client
+      document.getElementById('form-wrapper').style.display = 'none';
+      document.getElementById('feedback-success').classList.add('show');
+
+      window.location.href = 'mailto:faloiiii@gmail.com?subject=' + subject + '&body=' + body;
+    });
   </script>
 
 </body>
